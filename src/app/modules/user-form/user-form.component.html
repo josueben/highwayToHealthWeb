@@ -2,15 +2,15 @@
   <div class="col offset-s2 s8 offset-m4 m4 offset-l4 l4 green lighten-4">
     <h5 class="black-text">Registro de cuenta</h5>
     <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()"> 
-      <div class="input-field col s12 offset-m1 m10 offset-l1 l10">
+      <div class="input-field col s12 offset-m1 m5 offset-l1 l5">
         <input id="username" formControlName="username" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
-        <label for="username">Nombre de usuario</label>
+        <label for="username">Nombre de la cuenta</label>
         <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-          <div *ngIf="f.username.errors.required">*El nombre de usuario es requerido</div>
+          <div *ngIf="f.username.errors.required">*El nombre de la cuenta es requerido</div>
         </div>
       </div>
       
-      <div class="input-field col s12 offset-m1 m10 offset-l1 l10">
+      <div class="input-field col s12 m5 l5">
         <input id="password" formControlName="password" type="password" class="validate" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
         <label for="password">Contraseña</label>
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
@@ -18,9 +18,51 @@
           <div *ngIf="f.password.errors.minlength">*La contraseña debe ser por lo menos de 6 caracteres</div>
         </div>
       </div>
+
+      <div class="input-field col s12 offset-m1 m10 offset-l1 l10">
+        <input id="name" formControlName="name" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <label for="name">Nombre(s)</label>
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required">*El nombre es requerido</div>
+        </div>
+      </div>
+
+      <div class="input-field col s12 offset-m1 m10 offset-l1 l10">
+        <input id="lastname" formControlName="lastname" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }">
+        <label for="lastname">Apellidos</label>
+        <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+          <div *ngIf="f.lastname.errors.required">*Los apellidos son requeridos</div>
+        </div>
+      </div>
+
+      <div class="input-field col s12 offset-m1 m3 offset-l1 l3">
+        <input id="age" formControlName="age" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.age.errors }">
+        <label for="age">Edad</label>
+        <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
+          <div *ngIf="f.age.errors.required">*La edad es requerida</div>
+        </div>
+      </div>
+
+      <div class="input-field col s12 m3 l3">
+        <input id="weight" formControlName="weight" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.weight.errors }">
+        <label for="weight">Peso (kg)</label>
+        <div *ngIf="submitted && f.weight.errors" class="invalid-feedback">
+          <div *ngIf="f.weight.errors.required">*El peso es requerido</div>
+          <div *ngIf="f.weight.errors.minlength">*El peso debe ser por lo menos de 2 caracteres</div>
+        </div>
+      </div>
+
+      <div class="input-field col s12 m4 l4">
+        <input id="height" formControlName="height" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.height.errors }">
+        <label for="height">Altura (cm)</label>
+        <div *ngIf="submitted && f.height.errors" class="invalid-feedback">
+          <div *ngIf="f.height.errors.required">*El nombre es requerido</div>
+          <div *ngIf="f.password.errors.minlength">*La estatura debe ser por lo menos de 3 caracteres</div>
+        </div>
+      </div>
     </form>    
-    <a (click)="prueba()" class="waves-effect waves-light btn right"><i class="material-icons right">send</i>Iniciar sesión</a>
-    <a routerLink="/create-user" class="waves-effect waves-teal btn-flat right">Crear cuenta</a>
+    <a (click)="createUser()" class="waves-effect waves-light btn right"><i class="material-icons right">send</i>Crear cuenta</a>
+    <a routerLink="/log-in" class="waves-effect waves-teal btn-flat right">Volver a inicio</a>
   </div>
 </div>
 

@@ -16,14 +16,17 @@ export class UserFormComponent implements OnInit {
     this.createUserForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      name: ['', Validators.required],
+      lastname: ['', Validators.required],
+      age: ['', Validators.required],
       weight: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
+      height: ['', [Validators.required, Validators.minLength(3)]]
     });
   }
 
   get f() { return this.createUserForm.controls; }
 
-  prueba() {
+  createUser() {
     this.submitted = true;
     console.log(this.f);
     // stop here if form is invalid
