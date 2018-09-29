@@ -37,6 +37,29 @@
     box-shadow: 0 1px 0 0 #000 !important;
 }
 
+/* label focus color */
+.input-field input[type=email]:focus + label {
+    color: #000 !important;
+}
+
+.input-field input[type=email] + label {
+    color: #000 !important;
+}
+
+/* label underline focus color */
+.input-field input[type=email]:focus {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+}
+
+.input-field select label{
+    color: black;
+}
+
 .invalid-feedback{
     color:red;
+}
+
+.group-buttons{
+    margin-top: 4%;
 }

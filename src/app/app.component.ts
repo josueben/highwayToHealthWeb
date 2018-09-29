@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MzInputModule } from 'ngx-materialize';
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col offset-s2 s8 offset-m4 m4 offset-l4 l4 green lighten-4">
+  <div class="col offset-s2 s8 offset-m2 m8 offset-l2 l8 green lighten-4">
     <h5 class="black-text">Registro de cuenta</h5>
     <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()"> 
       <div class="input-field col s12 offset-m1 m5 offset-l1 l5">
@@ -19,7 +19,15 @@
         </div>
       </div>
 
-      <div class="input-field col s12 offset-m1 m10 offset-l1 l10">
+      <div class="input-field col s12 offset-m1 m3 offset-l1 l3">
+        <input id="email" formControlName="email" type="email" class="validate" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <label for="email">Correo electrónico</label>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">*El email es requerido</div>          
+        </div>
+      </div>
+
+      <div class="input-field col s12 m3 l3">
         <input id="name" formControlName="name" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
         <label for="name">Nombre(s)</label>
         <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
@@ -27,7 +35,7 @@
         </div>
       </div>
 
-      <div class="input-field col s12 offset-m1 m10 offset-l1 l10">
+      <div class="input-field col s12 m4 l4">
         <input id="lastname" formControlName="lastname" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }">
         <label for="lastname">Apellidos</label>
         <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
@@ -57,12 +65,38 @@
         <label for="height">Altura (cm)</label>
         <div *ngIf="submitted && f.height.errors" class="invalid-feedback">
           <div *ngIf="f.height.errors.required">*El nombre es requerido</div>
-          <div *ngIf="f.password.errors.minlength">*La estatura debe ser por lo menos de 3 caracteres</div>
+          <div *ngIf="f.height.errors.minlength">*La estatura debe ser por lo menos de 3 caracteres</div>          
         </div>
       </div>
+
+      <div class="input-field col s12 offset-m1 m5 offset-l1 l5">
+        <mz-select-container>
+          <select mz-select formControlName="activity" id="options-select" [label]="'Actividad a la semana'" [placeholder]="'Seleccione una opción'" [ngClass]="{'is-invalid': submitted && f.activity.errors}">
+            <option value="1">Nada de ejercicio</option>
+            <option value="2">Ejercicio ligero (dos días por semana)</option>
+            <option value="3">Ejercicio moderado (cuatro días por semana)</option>
+            <option value="4">Deporte regular (seis días a la semana)</option>
+            <option value="5">Deportista (diario)</option>
+          </select>
+          <div *ngIf="submitted && f.activity.errors" class="invalid-feedback">
+            <div *ngIf="f.activity.errors.required">*La actividad es requerida</div>          
+          </div>
+        </mz-select-container>
+      </div>
+
+      <div class="col s12 m5 l5 group-buttons">
+        <div class="col s12 m6 l6">
+          <a (click)="createUser()" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Crear cuenta</a>
+        </div>
+        <div class="col s12 m6 l6">
+          <a routerLink="/log-in" class="waves-effect waves-teal btn-flat">Volver a inicio</a>
+        </div>       
+        
+      </div>
+      
+      
     </form>    
-    <a (click)="createUser()" class="waves-effect waves-light btn right"><i class="material-icons right">send</i>Crear cuenta</a>
-    <a routerLink="/log-in" class="waves-effect waves-teal btn-flat right">Volver a inicio</a>
+    
   </div>
 </div>
 

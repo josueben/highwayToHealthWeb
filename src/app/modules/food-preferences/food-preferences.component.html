@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col offset-s2 s8 offset-m2 m8 offset-l2 l8 green lighten-4">
+    <h5 class="black-text">¿Qué alimentos le gustaría consumir?</h5>
+    <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()"> 
+      
+      
+        <!--<input id="username" formControlName="username" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+        <label for="username">Nombre de la cuenta</label>
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">*El nombre de la cuenta es requerido</div>
+        </div>-->
+        <div class="col s12 m12 l12">
+
+          <div class="col s12 m6 l4">
+            <h5>Categoría 1</h5>
+              <mz-checkbox-container *ngFor="let item of this.itemsColumnA">
+                <input mz-checkbox
+                  [label]="item.name"
+                  [id]="item.id"
+                  type="checkbox"
+                  [filledIn]="true">
+              </mz-checkbox-container>  
+          </div>
+          
+          <div class="col s12 m6 l4">
+            <h5>Categoría 2</h5>
+            <mz-checkbox-container *ngFor="let item of this.itemsColumnB">
+              <input mz-checkbox
+                [label]="item.name"
+                [id]="item.id"
+                type="checkbox"
+                [filledIn]="true">
+            </mz-checkbox-container>  
+          </div>
+          
+          <div class="col s12 m6 l4">
+            <h5>Categoría 3</h5>
+            <mz-checkbox-container *ngFor="let item of this.itemsColumnC">
+              <input mz-checkbox
+                [label]="item.name"
+                [id]="item.id"
+                type="checkbox"
+                [filledIn]="true">
+            </mz-checkbox-container> 
+          </div>
+             
+        </div>
+
+        
+      
+    </form>    
+    <a (click)="setFood()" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</a>
+  </div>
+</div>
+
+
