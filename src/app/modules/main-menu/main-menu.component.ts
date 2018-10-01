@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-menu',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  goToTracing() {
+    this.router.navigate(['/tracing']);
+  }
+
+  goToFood() {
+    this.router.navigate(['/food-preferences']);
+  }
+
+  goToMeals() {
+    this.router.navigate(['/meal-preferences']);
+  }
+
+  goToDiet() {
+    this.router.navigate(['/diet']);
   }
 
 }
