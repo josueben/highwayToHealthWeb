@@ -31,8 +31,6 @@ export class UserFormComponent implements OnInit {
 
   createUser() {
     this.submitted = true;
-    console.log('puto');
-    console.log(this.f);
     // stop here if form is invalid
     if (this.createUserForm.invalid) {
       console.log('nel perro');

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MzButtonModule, MzInputModule, MzSelectModule, MzCheckboxModule, MzTimepickerModule, MzCardModule } from 'ngx-materialize';
 import { MzSidenavModule } from 'ngx-materialize';
@@ -14,6 +15,9 @@ import { MealPreferenceComponent } from './modules/meal-preference/meal-preferen
 import { TracingComponent } from './modules/tracing/tracing.component';
 import { DietComponent } from './modules/diet/diet.component';
 import { SidenavComponent } from './modules/sidenav/sidenav.component';
+import { RecordOfMeasuresComponent } from './modules/record-of-measures/record-of-measures.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,10 +29,12 @@ import { SidenavComponent } from './modules/sidenav/sidenav.component';
     MealPreferenceComponent,
     TracingComponent,
     DietComponent,
-    SidenavComponent
+    SidenavComponent,
+    RecordOfMeasuresComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MzButtonModule,

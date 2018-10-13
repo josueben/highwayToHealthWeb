@@ -2,6 +2,7 @@
   <div class="col offset-s2 s8 offset-m2 m8 offset-l2 l8 green lighten-4">
     <h5 class="black-text">Registro de cuenta</h5>
     <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()"> 
+      
       <div class="input-field col s12 offset-m1 m5 offset-l1 l5">
         <input id="username" formControlName="username" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
         <label for="username">Nombre de la cuenta</label>
@@ -92,11 +93,8 @@
           <a routerLink="/log-in" class="waves-effect waves-teal btn-flat">Volver a inicio</a>
         </div>       
         
-      </div>
+      </div>     
       
-      
-    </form>    
-    
+    </form>        
   </div>
 </div>
-
