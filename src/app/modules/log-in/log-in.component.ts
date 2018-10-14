@@ -19,12 +19,19 @@ export class LogInComponent implements OnInit {
   logInForm: FormGroup;
   submitted = false;
 
-  config:Config;
+  config: Config;
 
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService
-    ) { }
+    ) {
+      this.loginService.aver().subscribe(
+        response => {
+          console.log(response);
+        }
+      );
+
+    }
 
   ngOnInit() {
     this.logInForm = this.formBuilder.group({
@@ -43,11 +50,11 @@ export class LogInComponent implements OnInit {
       this.loginService.getInfoByPostalCode().subscribe(
         (data: Config) => {
           this.config = {
-            codigo_postal:data.codigo_postal;
-            colonias:data.colonias;
-            estado:data.estado;
-            municipio:data.municipio;
-          }
+            codigo_postal: data.codigo_postal,
+            colonias: data.colonias,
+            estado: data.estado,
+            municipio: data.municipio,
+          };
           console.log(this.config);
         }
       );

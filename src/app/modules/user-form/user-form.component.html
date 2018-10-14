@@ -22,7 +22,7 @@
           <div class="input-field col s12 m6 l6">
             <input id="email" formControlName="email" type="email" class="validate" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
             <label for="email">Correo electrónico</label>
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
               <div *ngIf="f.email.errors.required">*El email es requerido</div>
             </div>
           </div>
@@ -37,11 +37,14 @@
           </div>
 
           <div class="input-field col s12 m6 l6">
-            <input id="password" formControlName="password" type="password" class="validate" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
-            <label for="password">Repita contraseña</label>
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">*La contraseña es requerida</div>
-              <div *ngIf="f.password.errors.minlength">*La contraseña debe ser por lo menos de 6 caracteres</div>
+            <input id="passwordRepeat" formControlName="passwordRepeat" type="password" class="validate" [ngClass]="{ 'is-invalid': submitted && f.passwordRepeat.errors }">
+            <label for="passwordRepeat">Repita contraseña</label>
+            <div *ngIf="submitted && f.passwordRepeat.errors" class="invalid-feedback">
+              <div *ngIf="f.passwordRepeat.errors.required">*Este campo es requerido</div>
+              <div *ngIf="f.passwordRepeat.errors.minlength">*La contraseña debe ser por lo menos de 6 caracteres</div>
+            </div>
+            <div *ngIf="submitted && this.differentPassword" class="invalid-feedback">              
+              *La contraseña no coincide
             </div>
           </div>
 
@@ -102,7 +105,8 @@
             </mz-select-container>
           </div>
 
-        </form>
+          <div class="invalid-feedback" *ngIf="submitted && this.createUserForm.invalid">*Error en el formulario, revise que la información sea correcta</div>
+        </form>           
     </div>
 
     <div class="row">
