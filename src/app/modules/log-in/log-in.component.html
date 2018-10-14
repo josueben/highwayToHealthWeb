@@ -6,8 +6,6 @@
       </span>
     </div>
     <div class="row">
-
-
         <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
           <div class="input-field col s12 offset-m1 m10 offset-l1 l10">
             <input id="username" formControlName="username" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
@@ -16,7 +14,6 @@
               <div *ngIf="f.username.errors.required">*El nombre de usuario es requerido</div>
             </div>
           </div>
-
           <div class="input-field col s12 offset-m1 m10 offset-l1 l10">
             <input id="password" formControlName="password" type="password" class="validate" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
             <label for="password">Contraseña</label>
@@ -26,12 +23,10 @@
             </div>
           </div>
         </form>
-        <div style="text-align: center;">
-          <a (click)="checkUser()" class="btn waves-effect waves-light btn"><i class="material-icons right">send</i>Iniciar sesión</a>
-          <a routerLink="/create-user" class="waves-effect waves-light btn">Crear cuenta</a>
-        </div>
-
-
+    </div>
+    <div class="m-buttons">
+      <a (click)="checkUser()" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Iniciar sesión</a>
+      <a routerLink="/create-user" class="waves-effect waves-light btn">Crear cuenta</a>
     </div>
   </div>
 </div>
