@@ -33,7 +33,7 @@ export class LogInComponent implements OnInit {
     });
   }
 
-  get f() { return this.logInForm.controls; }  
+  get f() { return this.logInForm.controls; }
 
   checkUser() {
     this.submitted = true;
