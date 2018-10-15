@@ -17,6 +17,8 @@ export class FoodPreferencesComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder) {
+    // En el constructor se carga la información de los tipos de alimentos
+    // lo cargamos aquí para que se vean desde el comienzo, el ws nos los da y lo agrupamos
     for (let i = 0; i < 5; i++) {
       this.itemsColumnA.push(new FoodPreference(i + 3, 'Arroz' + i));
     }
@@ -34,6 +36,7 @@ export class FoodPreferencesComponent implements OnInit {
   }
 
   setFood() {
+    // Guarda las preferencias asociando el id de la comida con el de usuario
     this.submitted = true;
     let item;
     for (item of this.itemsColumnA) {

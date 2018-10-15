@@ -13,6 +13,7 @@ export class SidenavComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Métodos para redireccionar
   goToHome() {
     this.router.navigate(['/main-menu']);
   }

@@ -13,6 +13,8 @@ export class MainMenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Cada uno de los siguientes métodos nos redirige al componente mencionado
+
   goToTracing() {
     this.router.navigate(['/tracing']);
   }

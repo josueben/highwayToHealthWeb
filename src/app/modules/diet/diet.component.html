@@ -1,3 +1,28 @@
-<p>
-  diet works!
-</p>
+<div>
+  <h5 class="center">Generar dieta</h5>
+  <div class="col s6 m6 l6">
+    <a (click)="generateDiet()" class="waves-effect waves-light btn">Crear dieta</a>
+  </div>
+  <div *ngIf="this.dietGenerated" class="col s12 m12 l12 data-diet">
+    <h6>Total de calorias: {{this.totalCalories}}</h6>
+    <table class="responsive-table">
+        <thead>
+          <tr>
+              <th>Alimento</th>
+              <th>Medida</th>
+              <th>Calorias</th>
+              <th>Carbohidratos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let food of this.dietFoods">
+            <td>{{food.name}}</td>
+            <td>{{food.portion}}</td>
+            <td>{{food.calories}}</td>
+            <td>{{food.hco}}</td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+  </div>  
+</div>

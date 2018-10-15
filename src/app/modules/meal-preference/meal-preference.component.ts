@@ -24,6 +24,7 @@ export class MealPreferenceComponent implements OnInit {
   get f() { return this.setMealPreference.controls; }
 
   mealPreference() {
+    // Registramos la selección de los horarios de comida
     this.submitted = true;
     console.log(this.f);
   }

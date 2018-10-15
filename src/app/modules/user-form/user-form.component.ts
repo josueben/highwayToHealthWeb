@@ -37,6 +37,7 @@ export class UserFormComponent implements OnInit {
   get f() { return this.createUserForm.controls; }
 
   createUser() {
+    // Creamos el ususario via WS
     this.submitted = true;
     // stop here if form is invalid
     if (this.createUserForm.invalid) {

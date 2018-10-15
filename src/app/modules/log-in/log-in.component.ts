@@ -43,6 +43,7 @@ export class LogInComponent implements OnInit {
   get f() { return this.logInForm.controls; }
 
   checkUser() {
+    // Verificamos con el WS si el usuario esta registrado en la plataforma
     this.submitted = true;
     console.log(this.f);
     // stop here if form is invalid

@@ -14,6 +14,7 @@ export class TracingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // Carga de los datos de las últimas dietas en base al criterio de búsqueda
     const itemsQuant = 5;
     let iterator = 0;
     for (iterator; iterator < itemsQuant; iterator++) {
