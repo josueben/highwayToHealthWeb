@@ -72,6 +72,30 @@
             </div>
           </div>
 
+          <div class="col s12 m6 l6">
+            <h6>Sexo</h6>
+            <mz-radio-button-container class="col s6 m6 l6">
+              <input mz-radio-button
+                formControlName="sex"
+                value = "H"
+                [label]="'Masculino'"
+                [withGap]="true"              
+                id="H"
+                name="sex"
+                type="radio">
+            </mz-radio-button-container>
+            <mz-radio-button-container class="col s6 m6 l6">
+              <input mz-radio-button
+                formControlName="sex"
+                value = "M"
+                [label]="'Femenino'"
+                [withGap]="true"
+                id="M"
+                name="sex"
+                type="radio">
+            </mz-radio-button-container>
+          </div>
+
           <div class="input-field col s12 m6 l6">
             <input id="weight" formControlName="weight" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.weight.errors }">
             <label for="weight">Peso (kg)</label>

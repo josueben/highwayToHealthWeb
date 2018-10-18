@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MzButtonModule, MzInputModule, MzSelectModule } from 'ngx-materialize';
 import { UserService } from '../../services/user.service';
 import { User } from 'src/app/classes/User';
+import { Router } from '@angular/router';
 
 interface Answer {
   status: string;
@@ -22,7 +23,8 @@ export class UserFormComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -70,6 +72,7 @@ export class UserFormComponent implements OnInit {
           console.log(response);
           if (response.status === 'OK') {
             console.log('Chiii');
+            this.router.navigate(['/log-in']);
           }
         });
       } else {
