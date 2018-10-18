@@ -1,33 +1,65 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FoodPreference } from '../../classes/FoodPreference';
+import { FoodPreferenceAnswer, FoodPreferencePost } from '../../classes/FoodPreference';
+import { FoodService } from '../../services/food.service';
+import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
+
+interface Answer {
+  status: string;
+}
 
 @Component({
   selector: 'app-food-preferences',
   templateUrl: './food-preferences.component.html',
   styleUrls: ['./food-preferences.component.css']
 })
+
 export class FoodPreferencesComponent implements OnInit {
+
   setFoodPreferences: FormGroup;
   submitted = false;
-  foods: FoodPreference[] = [];
-  itemsColumnA: FoodPreference[] = [];
-  itemsColumnB: FoodPreference[] = [];
-  itemsColumnC: FoodPreference[] = [];
+  loaded = false;
+  foods: FoodPreferenceAnswer[] = [];
+  selectedFoods: FoodPreferencePost[] = [];
+  itemsColumnA: FoodPreferenceAnswer[] = [];
+  itemsColumnB: FoodPreferenceAnswer[] = [];
+  itemsColumnC: FoodPreferenceAnswer[] = [];
 
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private foodService: FoodService,
+    private userService: UserService,
+    private router: Router
+  ) {
+    this.userService.getUserSession();
     // En el constructor se carga la información de los tipos de alimentos
     // lo cargamos aquí para que se vean desde el comienzo, el ws nos los da y lo agrupamos
-    for (let i = 0; i < 5; i++) {
-      this.itemsColumnA.push(new FoodPreference(i + 3, 'Arroz' + i));
-    }
-    for (let i = 0; i < 5; i++) {
-      this.itemsColumnB.push(new FoodPreference(i + 10, 'Frijol' + i));
-    }
-    for (let i = 0; i < 5; i++) {
-      this.itemsColumnC.push(new FoodPreference(i + 20, 'Pescado' + i));
-    }
+    this.foodService.getAllFoods().subscribe((response: FoodPreferenceAnswer[]) => {
+      this.foods = response;
+      console.log(this.foods);
+      let iterator = 0;
+      const groupDivider = this.foods.length / 3;
+      for ( iterator; iterator < this.foods.length; iterator++ ) {
+        if (iterator < groupDivider) {
+          this.itemsColumnA.push(this.foods[iterator]);
+        } else if (iterator > groupDivider && iterator < groupDivider * 2) {
+          this.itemsColumnB.push(this.foods[iterator]);
+        } else {
+          this.itemsColumnC.push(this.foods[iterator]);
+        }
+      }
+      this.loaded = true;
+      this.foodService.getUserFoods().subscribe((responseUserFood: FoodPreferencePost[]) => {
+        if (responseUserFood.length > 0) {
+          for (const item of responseUserFood) {
+            const element = <HTMLInputElement> document.getElementById(item.id_food.toString());
+            element.checked = true;
+          }
+        }
+      });
+    });
   }
 
   ngOnInit() {
@@ -40,11 +72,33 @@ export class FoodPreferencesComponent implements OnInit {
     this.submitted = true;
     let item;
     for (item of this.itemsColumnA) {
-      const element = document.getElementById(item.id.toString());
-      /*if (element.checked) {
-        this.foods.push(new FoodPreference(item.id, item.name));
-      }*/
+      const element = <HTMLInputElement> document.getElementById(item.id.toString());
+      if (element.checked) {
+        this.selectedFoods.push(new FoodPreferencePost(this.userService.actualUser.id, item.id));
+      }
     }
-    console.log(this.foods);
+    for (item of this.itemsColumnB) {
+      const element = <HTMLInputElement> document.getElementById(item.id.toString());
+      if (element.checked) {
+        this.selectedFoods.push(new FoodPreferencePost(this.userService.actualUser.id, item.id));
+      }
+    }
+    for (item of this.itemsColumnC) {
+      const element = <HTMLInputElement> document.getElementById(item.id.toString());
+      if (element.checked) {
+        this.selectedFoods.push(new FoodPreferencePost(this.userService.actualUser.id, item.id));
+      }
+    }
+    let quantity;
+    if (this.selectedFoods.length > 1) {
+      quantity = 1;
+    } else {
+      quantity = 0;
+    }
+    this.foodService.setUserFoods(this.selectedFoods, quantity).subscribe((response: Answer) => {
+      if (response.status === 'OK') {
+        this.router.navigate(['/main-menu']);
+      }
+    });
   }
 }

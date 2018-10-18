@@ -1,3 +1,16 @@
+<div class="input-field col s12 m6 l6" style="margin-top:0px;">
+  <mz-select-container>
+    <select mz-select formControlName="activity" id="options-select" [placeholder]="'Selecciona el tiempo'">
+      <option value="1">Ayer</option>
+      <option value="2">La última semana</option>
+      <option value="3">El mes</option>
+    </select>
+    <div *ngIf="submitted && f.activity.errors" class="invalid-feedback">
+      <div *ngIf="f.activity.errors.required">*La actividad es requerida</div>
+    </div>
+  </mz-select-container>
+</div>
+
 <table>
   <thead>
     <tr>

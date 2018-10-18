@@ -1,12 +1,11 @@
 <div class="row">
-    <div class="col offset-s2 s8 offset-m2 m8 offset-l2 l8 green lighten-4">
-      <h5 class="black-text">Registro horario de comidas</h5>
-      <form [formGroup]="setMealPreference" (ngSubmit)="onSubmit()"> 
-              
+  <div class="col offset-s2 s8 offset-m2 m8 offset-l2 l8 green lighten-4">
+    <h5 class="black-text">Registro horario de comidas</h5>
+    <form [formGroup]="setMealPreference" (ngSubmit)="onSubmit()">      
         <mz-timepicker-container class="col s12 m6 l6">            
           <input mz-timepicker
             [label]="'Hora del desayuno'"
-            id="timepickerBreakFast"
+            id="1"
             placeholder="Elige la hora"
             type="text"
             formControlName="breakfast" />
@@ -18,7 +17,7 @@
         <mz-timepicker-container class="col s12 m6 l6">            
           <input mz-timepicker
             [label]="'Colación 1'"
-            id="timepickerMeal1"
+            id="2"
             placeholder="Elige la hora"
             type="text"
             formControlName="meal1" />
@@ -27,7 +26,7 @@
         <mz-timepicker-container class="col s12 m6 l6">            
           <input mz-timepicker
             [label]="'Hora de la comida'"              
-            id="timepickerLunch"
+            id="3"
             placeholder="Elige la hora"
             type="text"
             formControlName="lunch" />
@@ -39,7 +38,7 @@
         <mz-timepicker-container class="col s12 m6 l6">            
           <input mz-timepicker
             [label]="'Colación 2'"
-            id="timepickerMeal2"
+            id="4"
             placeholder="Elige la hora"
             type="text"
             formControlName="meal2" />
@@ -48,7 +47,7 @@
         <mz-timepicker-container class="col s12 m6 l6">
           <input mz-timepicker
             [label]="'Hora de la cena'"
-            id="timepickerDinner"
+            id="5"
             placeholder="Elige la hora"
             type="text"
             formControlName="dinner" />

@@ -2,6 +2,10 @@
     margin-top: 5%; 
 }
 
+.invalid-feedback{
+    color:red;
+}
+
 .btn{
     margin-top: 8%;
     margin-bottom: 8%;

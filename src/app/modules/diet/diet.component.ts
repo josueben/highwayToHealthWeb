@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Food } from '../../classes/Food';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-diet',
@@ -12,7 +13,11 @@ export class DietComponent implements OnInit {
   dietFoods: Food[] = [];
   dietGenerated = false;
 
-  constructor() { }
+  constructor(
+    private userService: UserService
+  ) {
+    this.userService.getUserSession();
+  }
 
   ngOnInit() {
   }

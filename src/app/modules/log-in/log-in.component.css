@@ -98,7 +98,7 @@ a:hover {
 }
 
 .title {
-  //font-family: Roboto-Bold;
+  font-family: Roboto-Bold;
   font-size: 40px;
   color: #fff;
   text-align: center;
@@ -118,4 +118,5 @@ a:hover {
 
 .m-buttons {
   text-align: center;
+  margin-top: 2%;
 }

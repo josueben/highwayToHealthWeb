@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,7 +9,10 @@ import { Router } from '@angular/router';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
   }
@@ -16,6 +20,11 @@ export class SidenavComponent implements OnInit {
   // Métodos para redireccionar
   goToHome() {
     this.router.navigate(['/main-menu']);
+  }
+
+  closeSession() {
+    this.userService.destroySessionStorage();
+    this.router.navigate(['log-in']);
   }
 
 }

@@ -35,7 +35,7 @@
               <div *ngIf="f.password.errors.minlength">*La contraseña debe ser por lo menos de 6 caracteres</div>
             </div>
           </div>
-
+          
           <div class="input-field col s12 m6 l6">
             <input id="passwordRepeat" formControlName="passwordRepeat" type="password" class="validate" [ngClass]="{ 'is-invalid': submitted && f.passwordRepeat.errors }">
             <label for="passwordRepeat">Repita contraseña</label>
@@ -47,6 +47,30 @@
               *La contraseña no coincide
             </div>
           </div>
+
+          <div class="col s12 m6 l6">
+              <h6>Sexo</h6>
+              <mz-radio-button-container class="col s6 m6 l6">
+                <input mz-radio-button
+                  formControlName="sex"
+                  value = "M"
+                  [label]="'Masculino'"
+                  [withGap]="true"              
+                  id="M"
+                  name="sex"
+                  type="radio">
+              </mz-radio-button-container>
+              <mz-radio-button-container class="col s6 m6 l6">
+                <input mz-radio-button
+                  formControlName="sex"
+                  value = "F"
+                  [label]="'Femenino'"
+                  [withGap]="true"
+                  id="F"
+                  name="sex"
+                  type="radio">
+              </mz-radio-button-container>
+            </div>
 
           <div class="input-field col s12 m6 l6">
             <input id="name" formControlName="name" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
@@ -105,7 +129,7 @@
             </mz-select-container>
           </div>
 
-          <div class="invalid-feedback" *ngIf="submitted && this.createUserForm.invalid">*Error en el formulario, revise que la información sea correcta</div>
+          <div class="invalid-feedback center" *ngIf="submitted && this.createUserForm.invalid">*Error en el formulario, revise que la información sea correcta</div>
         </form>           
     </div>
 

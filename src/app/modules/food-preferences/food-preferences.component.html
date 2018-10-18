@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col offset-s2 s8 offset-m2 m8 offset-l2 l8 green lighten-4">
+  <div class="col offset-s2 s8 offset-m2 m8 offset-l2 l8 green lighten-4" *ngIf="this.loaded">
     <h5 class="black-text">¿Qué alimentos le gustaría consumir?</h5>
     <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()"> 
       

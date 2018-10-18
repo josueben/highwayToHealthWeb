@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MzButtonModule, MzInputModule, MzSelectModule, MzCheckboxModule, MzTimepickerModule, MzCardModule } from 'ngx-materialize';
-import { MzSidenavModule } from 'ngx-materialize';
+import { MzSidenavModule, MzRadioButtonModule  } from 'ngx-materialize';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
@@ -44,6 +44,7 @@ import { RecordOfMeasuresComponent } from './modules/record-of-measures/record-o
     MzTimepickerModule,
     MzCardModule,
     MzSidenavModule,
+    MzRadioButtonModule,
     RouterModule.forRoot([
       {path: '', component: LogInComponent},
       {path: 'log-in', component: LogInComponent},
