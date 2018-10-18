@@ -31,9 +31,9 @@ export class LogInComponent implements OnInit {
     private loginService: LoginService,
     private userService: UserService,
     private router: Router
-    ) {
-
-    }
+  ) {
+      this.userService.destroySessionStorage();
+  }
 
   ngOnInit() {
     this.logInForm = this.formBuilder.group({
