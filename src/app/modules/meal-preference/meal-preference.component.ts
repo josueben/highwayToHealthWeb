@@ -32,6 +32,7 @@ export class MealPreferenceComponent implements OnInit {
       console.log(response);
       if (response.length > 0) {
         for (const item of response) {
+          console.log('Que pedo');
           const element = <HTMLInputElement> document.getElementById(item.id_meal.toString());
           element.value = item.hour;
         }
