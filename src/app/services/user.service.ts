@@ -29,12 +29,18 @@ export class UserService {
   }
 
   getUserSession() {
-    this.actualUser = JSON.parse(sessionStorage.user);
-    console.log(this.actualUser.id);
-    if (this.actualUser.id === null) {
+    console.log('Holi');
+    if (sessionStorage.getItem('user') === null) {
+      this.logged = true;
       this.destroySessionStorage();
     } else {
-      this.logged = true;
+      this.actualUser = JSON.parse(sessionStorage.user);
+      console.log(this.actualUser);
+      if (this.actualUser.id === null) {
+        this.destroySessionStorage();
+      } else {
+        this.logged = true;
+      }
     }
   }
 
