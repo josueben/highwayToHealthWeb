@@ -1,5 +1,5 @@
 .row{
-    margin-top: 5%; 
+    margin-top: 5%;
     margin-bottom: 5%;
 }
 
@@ -9,4 +9,25 @@
     margin-bottom: 5%;
     margin-left: 3%;
     margin-right: 3%;
+}
+
+.title {
+  //font-family: Roboto-Bold;
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
+  text-align: center;
+}
+
+.form-title::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(54,84,99,0.7);
 }

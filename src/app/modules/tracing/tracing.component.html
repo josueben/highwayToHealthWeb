@@ -1,30 +1,24 @@
-<div class="input-field col s12 m6 l6" style="margin-top:0px;">
-  <mz-select-container>
-    <select mz-select formControlName="activity" id="options-select" [placeholder]="'Selecciona el tiempo'">
-      <option value="1">Ayer</option>
-      <option value="2">La última semana</option>
-      <option value="3">El mes</option>
-    </select>
-    <div *ngIf="submitted && f.activity.errors" class="invalid-feedback">
-      <div *ngIf="f.activity.errors.required">*La actividad es requerida</div>
-    </div>
-  </mz-select-container>
+<div class="container">
+  <span class="title">
+    Seguimiento
+  </span>
+  <div class="wrap z-depth-5">
+    <table class="striped highlight centered">
+      <thead>
+        <tr>
+          <th>Peso</th>
+          <th>Fecha</th>
+          <th>Calorías consumidas</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of this.tracings">
+          <td>{{item.weight}}</td>
+          <td>{{item.weight}}</td>
+          <td>{{item.calories}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<table>
-  <thead>
-    <tr>
-        <th>Peso</th>
-        <th>Fecha</th>
-        <th>Calorías consumidas</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let item of this.tracings">
-      <td>{{item.weight}}</td>
-      <td>{{item.date}}</td>
-      <td>{{item.calories}}</td>
-    </tr> 
-  </tbody>
-</table>

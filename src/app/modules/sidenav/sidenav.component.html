@@ -1,30 +1,56 @@
-<mz-sidenav
-  [id]="'sidenav-demo'"
-  [collapseButtonId]="'btn-sidenav-demo'">
-  <mz-sidenav-header (click)="goToHome()" class="cursorPointer">
+<mz-sidenav [backgroundClass]="'side-nav'" [id]="'sidenav-demo'" [collapseButtonId]="'btn-sidenav-demo'">
+
+  <mz-sidenav-header (click)="goToHome()" class="cursorPointer center">
     Highway to Health
   </mz-sidenav-header>
-  <!--<mz-sidenav-subheader>Link Subheader</mz-sidenav-subheader>-->
-  <mz-sidenav-link>
-    <a routerLink="/diet" class="waves-effect">Generar dieta</a>
-  </mz-sidenav-link>
+
   <mz-sidenav-divider></mz-sidenav-divider>
-  <mz-sidenav-link [active]="true">
-    <a routerLink="/tracing" class="waves-effect">Seguimiento</a>
-  </mz-sidenav-link>
+
+  <div class="profile">
+    <mz-sidenav-subheader ><i class="material-icons">account_circle</i>Daniel Zapata</mz-sidenav-subheader>
+    <mz-sidenav-subheader >xDanny@highwaytohealth.com</mz-sidenav-subheader>
+  </div>
+
   <mz-sidenav-divider></mz-sidenav-divider>
+
   <mz-sidenav-link>
-    <a routerLink="/meal-preferences" class="waves-effect">Elige horas de comidas</a>
+    <a routerLink="/diet" class="waves-effect waves-teal"><i class="material-icons">equalizer</i>Generar dieta</a>
   </mz-sidenav-link>
-  <mz-sidenav-divider></mz-sidenav-divider>
+
   <mz-sidenav-link>
-    <a routerLink="/food-preferences" class="waves-effect">Elige los alimentos</a>
+    <a routerLink="/tracing" class="waves-effect waves-teal"><i class="material-icons">assessment</i>Seguimiento</a>
   </mz-sidenav-link>
-  <mz-sidenav-divider></mz-sidenav-divider>
+
   <mz-sidenav-link>
-    <a (click)="closeSession()" class="waves-effect">Cerrar sesión</a>
+    <a routerLink="/meal-preferences" class="waves-effect waves-teal"><i class="material-icons">alarm_add</i>Elige horas de comidas</a>
   </mz-sidenav-link>
+
+  <mz-sidenav-link>
+    <a routerLink="/food-preferences" class="waves-effect waves-teal"><i class="material-icons">restaurant_menu</i>Elige los alimentos</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-subheader>Redes Sociales</mz-sidenav-subheader>
+
+  <mz-sidenav-link>
+    <a routerLink="/" class="waves-effect waves-teal"><i class="material-icons">sentiment_dissatisfied</i>Facebook</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-link>
+    <a routerLink="/" class="waves-effect waves-teal"><i class="material-icons">sentiment_dissatisfied</i>Twitter</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-link>
+    <a routerLink="/" class="waves-effect waves-teal"><i class="material-icons">whatshot</i>Tinder</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-subheader>Ayuda</mz-sidenav-subheader>
+
+  <mz-sidenav-link>
+    <a routerLink="/" class="waves-effect waves-teal"><i class="material-icons">mail</i>Contactanos</a>
+  </mz-sidenav-link>
+
 </mz-sidenav>
+
 <button mz-button id="btn-sidenav-demo"><i class="material-icons right">menu</i>
   Menu
 </button>

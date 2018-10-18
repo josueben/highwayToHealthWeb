@@ -1,10 +1,7 @@
 <div>
   <h5 class="center">Generar dieta</h5>
-  <div *ngIf="!this.dietGenerated" class="col s6 m6 l6">
+  <div class="col s6 m6 l6">
     <a (click)="generateDiet()" class="waves-effect waves-light btn">Crear dieta</a>
-  </div>
-  <div *ngIf="this.dietGenerated" class="col s6 m6 l6">
-    <a (click)="generateDiet()" class="waves-effect waves-light btn">Generar otra dieta</a>
   </div>
   <div *ngIf="this.dietGenerated" class="col s12 m12 l12 data-diet">
     <h6>Total de calorias: {{this.totalCalories}}</h6>
@@ -23,7 +20,8 @@
             <td>{{food.portion}}</td>
             <td>{{food.calories}}</td>
             <td>{{food.hco}}</td>
-          </tr>                 
+          </tr>
+          <tr>
         </tbody>
       </table>
   </div>  

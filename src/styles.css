@@ -1,4 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 body{
     background-color: #e6fff2;
+    font-family: Lato;
+}
+
+.side-nav {
+  background-color: #e6ffe6 !important;
+}
+
+.sidenav-header{
+  font-size: 25px;
+  font-weight: bold;
+  /*color: #fff;*/
+  color: rgb(38, 166, 154, .87);
+  /* text-shadow: 1px 1px 4px #000000; */
+  /* color: rgba(0,0,0,0.87); */
+}
+
+.divider {
+  margin-left: 8%  !important;
+  width: 84%;
+}
+
+.profile {
+  margin-left: 8%  !important;
+  width: 84%;
 }

@@ -1,78 +1,80 @@
-<div class="row">
-  <div class="col offset-s2 s8 offset-m2 m8 offset-l2 l8 green lighten-4">
-    <h5 class="black-text">Registro horario de comidas</h5>
-    <form [formGroup]="setMealPreference" (ngSubmit)="onSubmit()">      
-        <mz-timepicker-container class="col s12 m6 l6">            
-          <input mz-timepicker
-            [label]="'Hora del desayuno'"
-            id="1"
-            placeholder="Elige la hora"
-            type="text"
-            formControlName="breakfast" />
-        </mz-timepicker-container>
-        <div *ngIf="submitted && f.breakfast.errors" class="invalid-feedback">
-          <div *ngIf="f.breakfast.errors.required">*El horario del desayuno es requerido</div>
-        </div>
+<div class="container-dnny">
+  <div class="wrap">
 
-        <mz-timepicker-container class="col s12 m6 l6">            
-          <input mz-timepicker
-            [label]="'Colación 1'"
-            id="2"
-            placeholder="Elige la hora"
-            type="text"
-            formControlName="meal1" />
-        </mz-timepicker-container>
-        
-        <mz-timepicker-container class="col s12 m6 l6">            
-          <input mz-timepicker
-            [label]="'Hora de la comida'"              
-            id="3"
-            placeholder="Elige la hora"
-            type="text"
-            formControlName="lunch" />
-        </mz-timepicker-container>
-        <div *ngIf="submitted && f.lunch.errors" class="invalid-feedback">
-          <div *ngIf="f.lunch.errors.required">*El horario de la comida es requerido</div>
+    <div class="form-title" style="background-image: url(../../../assets/bg-login.jpg);">
+      <span class="title">
+        Registro horario de comidas
+      </span>
+    </div>
+
+    <div class="row">
+          <form [formGroup]="setMealPreference" (ngSubmit)="onSubmit()">
+            <div style="display: flex; flex-wrap: wrap;">
+              <mz-timepicker-container class="col s12 m4 l4">
+                <i class="material-icons">access_time</i>
+                <input mz-timepicker
+                  [label]="'Hora del desayuno'"
+                  id="timepickerBreakFast"
+                  placeholder="Elige la hora"
+                  type="text"
+                  formControlName="breakfast"/>
+              </mz-timepicker-container>
+            </div>
+            <div *ngIf="submitted && f.breakfast.errors" class="invalid-feedback">
+              <div *ngIf="f.breakfast.errors.required">*El horario del desayuno es requerido</div>
+            </div>
+
+            <mz-timepicker-container class="col s12 m4 l4">
+              <i class="material-icons">access_time</i>
+              <input mz-timepicker
+                [label]="'Colación 1'"
+                id="timepickerMeal1"
+                placeholder="Elige la hora"
+                type="text"
+                formControlName="meal1" />
+            </mz-timepicker-container>
+
+            <mz-timepicker-container class="col s12 m4 l4">
+              <i class="material-icons">access_time</i>
+              <input mz-timepicker
+                [label]="'Hora de la comida'"
+                id="timepickerLunch"
+                placeholder="Elige la hora"
+                type="text"
+                formControlName="lunch" />
+            </mz-timepicker-container>
+            <div *ngIf="submitted && f.lunch.errors" class="invalid-feedback">
+              <div *ngIf="f.lunch.errors.required">*El horario de la comida es requerido</div>
+            </div>
+
+            <mz-timepicker-container class="col s12 m4 l4">
+              <i class="material-icons">access_time</i>
+              <input mz-timepicker
+                [label]="'Colación 2'"
+                id="timepickerMeal2"
+                placeholder="Elige la hora"
+                type="text"
+                formControlName="meal2" />
+            </mz-timepicker-container>
+
+            <mz-timepicker-container class="col s12 m4 l4">
+              <i class="material-icons">access_time</i>
+              <input mz-timepicker
+                [label]="'Hora de la cena'"
+                id="timepickerDinner"
+                placeholder="Elige la hora"
+                type="text"
+                formControlName="dinner" />
+            </mz-timepicker-container>
+            <div *ngIf="submitted && f.dinner.errors" class="invalid-feedback">
+              <div *ngIf="f.dinner.errors.required">*El horario de cena es requerida</div>
+            </div>
+
+            <div class="col s12 m6 l6">
+              <a (click)="mealPreference()" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Registrar</a>
+            </div>
+
+          </form>
         </div>
-        
-        <mz-timepicker-container class="col s12 m6 l6">            
-          <input mz-timepicker
-            [label]="'Colación 2'"
-            id="4"
-            placeholder="Elige la hora"
-            type="text"
-            formControlName="meal2" />
-        </mz-timepicker-container>  
-        
-        <mz-timepicker-container class="col s12 m6 l6">
-          <input mz-timepicker
-            [label]="'Hora de la cena'"
-            id="5"
-            placeholder="Elige la hora"
-            type="text"
-            formControlName="dinner" />
-        </mz-timepicker-container>
-        <div *ngIf="submitted && f.dinner.errors" class="invalid-feedback">
-          <div *ngIf="f.dinner.errors.required">*El horario de cena es requerida</div>
-        </div>
-       
-  
-        <!--<div class="input-field col s12 m3 l3">
-          <input id="weight" formControlName="weight" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.weight.errors }">
-          <label for="weight">Peso (kg)</label>
-          <div *ngIf="submitted && f.weight.errors" class="invalid-feedback">
-            <div *ngIf="f.weight.errors.required">*El peso es requerido</div>
-            <div *ngIf="f.weight.errors.minlength">*El peso debe ser por lo menos de 2 caracteres</div>
-          </div>
-        </div>-->
-  
-        <div class="col s12 m6 l6">
-          <a (click)="mealPreference()" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Registrar</a>
-        </div>       
-        
-      </form>    
-      
     </div>
   </div>
-  
-  
