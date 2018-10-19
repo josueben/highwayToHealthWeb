@@ -1,18 +1,24 @@
 .row{
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
 }
 
 .cursorPointer{
     cursor: pointer;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-top: 2.5%;
+    margin-bottom: 3%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+
+    border-style: solid;
+    border-color: #26a69a;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
 }
 
 .title {
-  //font-family: Roboto-Bold;
   font-size: 32px;
   font-weight: 500;
   color: #fff;

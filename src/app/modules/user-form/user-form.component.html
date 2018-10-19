@@ -1,5 +1,5 @@
 <div class="container-dnny">
-  <div class="wrap">
+  <div class="wrap z-depth-5">
 
     <div class="form-title" style="background-image: url(../../../assets/bg-login.jpg);">
       <span class="title">
@@ -11,7 +11,7 @@
 
         <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
 <!--input-field col s12 offset-m1 m5 offset-l1 l5-->
-          <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l4">
             <input id="username" formControlName="username" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
             <label for="username">Nombre de la cuenta</label>
             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
@@ -19,7 +19,7 @@
             </div>
           </div>
 
-          <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l4">
             <input id="email" formControlName="email" type="email" class="validate" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
             <label for="email">Correo electrónico</label>
             <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -27,7 +27,7 @@
             </div>
           </div>
 
-          <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l4">
             <input id="password" formControlName="password" type="password" class="validate" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
             <label for="password">Contraseña</label>
             <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
@@ -36,19 +36,19 @@
             </div>
           </div>
 
-          <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l4">
             <input id="passwordRepeat" formControlName="passwordRepeat" type="password" class="validate" [ngClass]="{ 'is-invalid': submitted && f.passwordRepeat.errors }">
             <label for="passwordRepeat">Repita contraseña</label>
             <div *ngIf="submitted && f.passwordRepeat.errors" class="invalid-feedback">
               <div *ngIf="f.passwordRepeat.errors.required">*Este campo es requerido</div>
               <div *ngIf="f.passwordRepeat.errors.minlength">*La contraseña debe ser por lo menos de 6 caracteres</div>
             </div>
-            <div *ngIf="submitted && this.differentPassword" class="invalid-feedback">              
+            <div *ngIf="submitted && this.differentPassword" class="invalid-feedback">
               *La contraseña no coincide
             </div>
           </div>
 
-          <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l4">
             <input id="name" formControlName="name" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
             <label for="name">Nombre(s)</label>
             <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
@@ -56,7 +56,7 @@
             </div>
           </div>
 
-          <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l4">
             <input id="lastname" formControlName="lastname" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }">
             <label for="lastname">Apellidos</label>
             <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
@@ -64,7 +64,7 @@
             </div>
           </div>
 
-          <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l4">
             <input id="age" formControlName="age" type="number" class="validate" [ngClass]="{ 'is-invalid': submitted && f.age.errors }">
             <label for="age">Edad</label>
             <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
@@ -72,31 +72,7 @@
             </div>
           </div>
 
-          <div class="col s12 m6 l6">
-            <h6>Sexo</h6>
-            <mz-radio-button-container class="col s6 m6 l6">
-              <input mz-radio-button
-                formControlName="sex"
-                value = "H"
-                [label]="'Masculino'"
-                [withGap]="true"              
-                id="H"
-                name="sex"
-                type="radio">
-            </mz-radio-button-container>
-            <mz-radio-button-container class="col s6 m6 l6">
-              <input mz-radio-button
-                formControlName="sex"
-                value = "M"
-                [label]="'Femenino'"
-                [withGap]="true"
-                id="M"
-                name="sex"
-                type="radio">
-            </mz-radio-button-container>
-          </div>
-
-          <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l4">
             <input id="weight" formControlName="weight" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.weight.errors }">
             <label for="weight">Peso (kg)</label>
             <div *ngIf="submitted && f.weight.errors" class="invalid-feedback">
@@ -105,7 +81,7 @@
             </div>
           </div>
 
-          <div class="input-field col s12 m6 l6">
+          <div class="input-field col s12 m6 l4">
             <input id="height" formControlName="height" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.height.errors }">
             <label for="height">Altura (cm)</label>
             <div *ngIf="submitted && f.height.errors" class="invalid-feedback">
@@ -114,7 +90,7 @@
             </div>
           </div>
 
-          <div class="input-field col s12 m6 l6" style="margin-top:0px;">
+          <div class="input-field col s12 m6 l4" style="margin-top:0px;">
             <mz-select-container>
               <select mz-select formControlName="activity" id="options-select" [placeholder]="'Actividad a la semana'" [ngClass]="{'is-invalid': submitted && f.activity.errors}">
                 <option value="1">Nada de ejercicio</option>
@@ -129,8 +105,32 @@
             </mz-select-container>
           </div>
 
-          <div class="invalid-feedback" *ngIf="submitted && this.createUserForm.invalid">*Error en el formulario, revise que la información sea correcta</div>
-        </form>           
+          <div class="col s12 m6 l4">
+            <h6>Sexo</h6>
+            <mz-radio-button-container class="col s6 m6 l6">
+              <input mz-radio-button
+                formControlName="sex"
+                value = "M"
+                [label]="'Masculino'"
+                [withGap]="true"
+                id="H"
+                name="sex"
+                type="radio">
+            </mz-radio-button-container>
+            <mz-radio-button-container class="col s6 m6 l4">
+              <input mz-radio-button
+                formControlName="sex"
+                value = "F"
+                [label]="'Femenino'"
+                [withGap]="true"
+                id="M"
+                name="sex"
+                type="radio">
+            </mz-radio-button-container>
+          </div>
+
+          <div class="invalid-feedback center" *ngIf="submitted && this.createUserForm.invalid">*Error en el formulario, revise que la información sea correcta</div>
+        </form>
     </div>
 
     <div class="row">

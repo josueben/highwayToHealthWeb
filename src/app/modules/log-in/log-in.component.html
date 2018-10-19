@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="wrap">
+  <div class="wrap z-depth-5">
     <div class="form-title" style="background-image: url(../../../assets/bg-login.jpg);">
       <span class="title">
         Highway to Health
@@ -24,6 +24,11 @@
           </div>
         </form>
     </div>
+
+    <div *ngIf="submitted && this.noExist" class="invalid-feedback center">
+      El usuario no existe, asegúrese de que la información sea correcta.
+    </div>
+
     <div class="m-buttons">
       <a (click)="checkUser()" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Iniciar sesión</a>
       <a routerLink="/create-user" class="waves-effect waves-light btn">Crear cuenta</a>

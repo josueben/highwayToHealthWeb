@@ -11,10 +11,10 @@
 
  .row{
      padding: 15px;
+     margin-bottom: 1.5%;
  }
 
  .btn{
-     margin-bottom: 8%;
      background-color: #1b5e20
  }
 
@@ -37,6 +37,11 @@
      color:red;
  }
 
+ .input-field {
+   display: flex;
+   flex-wrap: wrap;
+ }
+
  a {
    margin-left: 6px;
    margin-right: 6px;
@@ -49,7 +54,7 @@
 
  .container-dnny {
    width: 100%;
-   min-height: 100vh;
+   min-height: 80vh;
    display: -webkit-box;
    display: -webkit-flex;
    display: -moz-box;
@@ -59,13 +64,14 @@
    justify-content: center;
    align-items: center;
    padding: 15px;
-   margin-top: -3.5%;
    background: #e6fff2;
  }
 
  .wrap {
    width: 800px;
    background: #fff;
+   border-style: solid;
+   border-color: #26a69a;
    border-radius: 10px;
    overflow: hidden;
    position: relative;
@@ -99,7 +105,7 @@
 
  .form-title::before {
    content: "";
-   display: block;
+   display: inline;
    position: absolute;
    z-index: -1;
    width: 100%;
@@ -111,8 +117,18 @@
 
  .m-buttons {
    text-align: center;
+   margin-top: 10px;
  }
 
  .ng-reflect-label {
    font-weight: bold;
+ }
+
+ .error {
+   font-size: 10px;
+   margin-top: -15px;
+ }
+
+ .aprro {
+   margin-top: 10px;
  }

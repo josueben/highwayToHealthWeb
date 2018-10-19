@@ -22,7 +22,7 @@ export class UserService {
     const method = this.url + '/CreateUser';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': '' });
+      'Authorization': 'ICKKCK' });
     const options = { headers: headers };
     const body = JSON.stringify(user);
     return this.http.post(method, body, options);

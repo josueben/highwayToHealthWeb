@@ -65,13 +65,14 @@ a:hover {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  margin-top: -3.5%;
   background: #e6fff2;
 }
 
 .wrap {
   width: 670px;
   background: #fff;
+  border-style: solid;
+  border-color: #26a69a;
   border-radius: 10px;
   overflow: hidden;
   position: relative;

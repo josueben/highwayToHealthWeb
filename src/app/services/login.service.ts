@@ -12,6 +12,8 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   logIn(username: string, password: string) {
+    console.log(username);
+    console.log(password);
     const method = this.url + '/ValidateUser';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
