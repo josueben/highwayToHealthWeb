@@ -5,9 +5,9 @@
     <div class="input-field col s12 m6 l4" style="margin-top:0px;">
       <mz-select-container>
         <select mz-select formControlName="purpose" id="options-select" [placeholder]="'Propósito de la dieta'" [ngClass]="{'is-invalid': submitted && f.purpose.errors}">
-          <option value="1">Bajar de peso</option>
-          <option value="2">Mantener peso</option>
-          <option value="3">Ganar peso</option>
+          <option value="Perder">Bajar de peso</option>
+          <option value="Mantener">Mantener peso</option>
+          <option value="Aumentar">Ganar peso</option>
         </select>
         <div *ngIf="submitted && f.purpose.errors" class="invalid-feedback">
           <div *ngIf="f.purpose.errors.required">*Selecciona un propósito</div>
@@ -23,18 +23,70 @@
     <table class="responsive-table">
         <thead>
           <tr>
-              <th>Alimento</th>
-              <th>Medida</th>
-              <th>Calorias</th>
-              <th>Carbohidratos</th>
+              <th>Frutas</th>
+              <th>Verduras</th>
+              <th>Cereales sin grasa</th>
+              <th>Cereales con grasa</th>
+              <th>Leguminosas</th>
+              <th>A.O.A muy bajos en grasa</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let food of this.dietFoods">
-            <td>{{food.name}}</td>
-            <td>{{food.portion}}</td>
-            <td>{{food.calories}}</td>
-            <td>{{food.hco}}</td>
+          <tr>
+            <td>{{this.dietGeneratedData.Frutas}}</td>
+            <td>{{this.dietGeneratedData.Verduras}}</td>
+            <td>{{this.dietGeneratedData.CerealesSG}}</td>
+            <td>{{this.dietGeneratedData.CerealesCG}}</td>
+            <td>{{this.dietGeneratedData.Leguminosas}}</td>
+            <td>{{this.dietGeneratedData.AOAMuyBajoEnGrasa}}</td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+
+      <table class="responsive-table">
+        <thead>
+          <tr>
+              <th>A.O.A bajos en grasa</th>
+              <th>A.O.A moderado en grasa</th>
+              <th>A.O.A alto en grasa</th>
+              <th>Leche descremada</th>
+              <th>Leche semidescremada</th>
+              <th>Leche entera</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{this.dietGeneratedData.AOABajoEnGrasa}}</td>
+            <td>{{this.dietGeneratedData.AOAModeradoEnGrasa}}</td>
+            <td>{{this.dietGeneratedData.AOAAltoEnGrasa}}</td>
+            <td>{{this.dietGeneratedData.LecheDescremada}}</td>
+            <td>{{this.dietGeneratedData.LecheSemidescremada}}</td>
+            <td>{{this.dietGeneratedData.LecheEntera}}</td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
+
+      <table class="responsive-table">
+        <thead>
+          <tr>
+              <th>Leche con azúcar</th>
+              <th>Aceites y grasas</th>
+              <th>Aceites y grasas con proteínas</th>
+              <th>Azúcares sin grasa</th>
+              <th>Azúcares con grasa</th>
+              <th>Alimentos libres de energía</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{this.dietGeneratedData.LecheConAzucar}}</td>
+            <td>{{this.dietGeneratedData.AceitesGrasasSP}}</td>
+            <td>{{this.dietGeneratedData.AceitesGrasasCP}}</td>
+            <td>{{this.dietGeneratedData.AzucaresSinGrasa}}</td>
+            <td>{{this.dietGeneratedData.AzucaresConGrasa}}</td>
+            <td>{{this.dietGeneratedData.AlimentosLibresDeEnergia}}</td>
           </tr>
           <tr>
         </tbody>
