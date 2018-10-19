@@ -2,11 +2,6 @@
     width: 150%;
 }
 
-a{
-    margin-top: 5%;
-    margin-bottom: 2%;
-}
-
 .container-dnny {
   width: 100%;
   min-height: 80vh;
@@ -45,4 +40,8 @@ a{
 .m-buttons {
   text-align: center;
   margin-top: 10px;
+}
+
+.lul {
+  margin-top: 30px;
 }
