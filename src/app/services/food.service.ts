@@ -31,7 +31,8 @@ export class FoodService {
     const body = JSON.stringify(selectedFoods);
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Multiple-Inputs': quantity.toString()
+      'Multiple-Inputs': quantity.toString(),
+      'id_user': this.userService.actualUser.id.toString()
     });
     const options = { headers: headers };
     return this.http.post(method, body, options);

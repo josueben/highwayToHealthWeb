@@ -21,7 +21,8 @@ export class MealsService {
     const method = this.url + '/SetUserMeals';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': '' });
+      'Authorization': '' ,
+      'id_user': this.userService.actualUser.id.toString()});
     const options = { headers: headers };
     const body = JSON.stringify(mealPreferences);
     return this.http.post(method, body, options);

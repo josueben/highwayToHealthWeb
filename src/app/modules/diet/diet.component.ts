@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Food } from '../../classes/Food';
 import { UserService } from '../../services/user.service';
 
@@ -12,15 +14,24 @@ export class DietComponent implements OnInit {
   calories = 0;
   dietFoods: Food[] = [];
   dietGenerated = false;
+  submitted = false;
+  dietForm;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.userService.getUserSession();
+    this.dietForm = this.formBuilder.group({
+      purpose: ['', Validators.required]
+    });
   }
 
   ngOnInit() {
   }
+
+  get f() { return this.dietForm.controls; }
 
   generateDiet() {
     this.dietGenerated = true;

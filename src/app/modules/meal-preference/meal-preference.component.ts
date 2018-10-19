@@ -27,20 +27,6 @@ export class MealPreferenceComponent implements OnInit {
     private mealService: MealsService,
     private router: Router
   ) {
-    this.userService.getUserSession();
-    this.mealService.getUserMeals().subscribe((response: MealPreference[]) => {
-      console.log(response);
-      if (response.length > 0) {
-        for (const item of response) {
-          console.log('Que pedo');
-          const element = <HTMLInputElement> document.getElementById(item.id_meal.toString());
-          element.value = item.hour;
-        }
-      }
-    });
-  }
-
-  ngOnInit() {
     this.setMealPreference = this.formBuilder.group({
       breakfast: ['', Validators.required],
       meal1: ['', ],
@@ -48,6 +34,22 @@ export class MealPreferenceComponent implements OnInit {
       meal2: ['', ],
       dinner: ['', Validators.required]
     });
+    this.userService.getUserSession();
+    this.mealService.getUserMeals().subscribe((response: MealPreference[]) => {
+      console.log(response);
+      if (response.length > 0) {
+        this.setMealPreference = this.formBuilder.group({
+          breakfast: [response[0].hour, Validators.required],
+          meal1: [response[1].hour, ],
+          lunch: [response[2].hour, Validators.required],
+          meal2: [response[3].hour, ],
+          dinner: [response[4].hour, Validators.required]
+        });
+      }
+    });
+  }
+
+  ngOnInit() {
   }
 
   get f() { return this.setMealPreference.controls; }

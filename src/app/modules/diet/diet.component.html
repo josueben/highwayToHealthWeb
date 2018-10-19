@@ -1,5 +1,20 @@
 <div>
   <h5 class="center">Generar dieta</h5>
+  <div></div>
+  <form [formGroup]="dietForm" (ngSubmit)="onSubmit()">
+    <div class="input-field col s12 m6 l4" style="margin-top:0px;">
+      <mz-select-container>
+        <select mz-select formControlName="purpose" id="options-select" [placeholder]="'Propósito de la dieta'" [ngClass]="{'is-invalid': submitted && f.purpose.errors}">
+          <option value="1">Bajar de peso</option>
+          <option value="2">Mantener peso</option>
+          <option value="3">Ganar peso</option>
+        </select>
+        <div *ngIf="submitted && f.purpose.errors" class="invalid-feedback">
+          <div *ngIf="f.purpose.errors.required">*Selecciona un propósito</div>
+        </div>
+      </mz-select-container>
+    </div>
+  </form>
   <div class="col s6 m6 l6">
     <a (click)="generateDiet()" class="waves-effect waves-light btn">Crear dieta</a>
   </div>
