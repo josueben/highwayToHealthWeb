@@ -1,12 +1,46 @@
-h5{
-    margin-top: 2%;
-}
-
 .row{
-    margin-top: 5%; 
+    width: 150%;
 }
 
 a{
     margin-top: 5%;
     margin-bottom: 2%;
+}
+
+.container-dnny {
+  width: 100%;
+  min-height: 80vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #e6fff2;
+}
+
+.wrap {
+  width: 1000px;
+  background: #fff;
+  border-style: solid;
+  border-color: #26a69a;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0%;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 60px;
+  color: #26a69a;
+  text-align: center;
+}
+
+.m-buttons {
+  text-align: center;
+  margin-top: 10px;
 }
