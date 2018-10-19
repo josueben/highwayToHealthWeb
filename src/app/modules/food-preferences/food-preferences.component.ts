@@ -4,6 +4,7 @@ import { FoodPreferenceAnswer, FoodPreferencePost } from '../../classes/FoodPref
 import { FoodService } from '../../services/food.service';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
+import { isEmbeddedView } from '@angular/core/src/view/util';
 
 interface Answer {
   status: string;
@@ -20,12 +21,29 @@ export class FoodPreferencesComponent implements OnInit {
   setFoodPreferences: FormGroup;
   submitted = false;
   loaded = false;
-  foods: FoodPreferenceAnswer[] = [];
-  selectedFoods: FoodPreferencePost[] = [];
-  itemsColumnA: FoodPreferenceAnswer[] = [];
-  itemsColumnB: FoodPreferenceAnswer[] = [];
-  itemsColumnC: FoodPreferenceAnswer[] = [];
 
+  foods: FoodPreferenceAnswer[] = [];
+
+  selectedFoods: FoodPreferencePost[] = [];
+
+  fruits: FoodPreferenceAnswer[] = [];
+  vegetables: FoodPreferenceAnswer[] = [];
+  cereals1: FoodPreferenceAnswer[] = [];
+  cereals2: FoodPreferenceAnswer[] = [];
+  legumes: FoodPreferenceAnswer[] = [];
+  AOA1: FoodPreferenceAnswer[] = [];
+  AOA2: FoodPreferenceAnswer[] = [];
+  AOA3: FoodPreferenceAnswer[] = [];
+  AOA4: FoodPreferenceAnswer[] = [];
+  milk1: FoodPreferenceAnswer[] = [];
+  milk2: FoodPreferenceAnswer[] = [];
+  milk3: FoodPreferenceAnswer[] = [];
+  milk4: FoodPreferenceAnswer[] = [];
+  oils1: FoodPreferenceAnswer[] = [];
+  oils2: FoodPreferenceAnswer[] = [];
+  sugars1: FoodPreferenceAnswer[] = [];
+  sugars2: FoodPreferenceAnswer[] = [];
+  freeEnergy: FoodPreferenceAnswer[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,15 +57,81 @@ export class FoodPreferencesComponent implements OnInit {
     this.foodService.getAllFoods().subscribe((response: FoodPreferenceAnswer[]) => {
       this.foods = response;
       console.log(response);
-      let iterator = 0;
       const groupDivider = this.foods.length / 3;
-      for ( iterator; iterator < this.foods.length; iterator++ ) {
-        if (iterator < groupDivider) {
-          this.itemsColumnA.push(this.foods[iterator]);
-        } else if (iterator > groupDivider && iterator < groupDivider * 2) {
-          this.itemsColumnB.push(this.foods[iterator]);
-        } else {
-          this.itemsColumnC.push(this.foods[iterator]);
+      for ( const itemFood of this.foods ) {
+        switch (itemFood.kind) {
+          case 1: {
+            this.fruits.push(itemFood);
+            break;
+          }
+          case 2: {
+            this.vegetables.push(itemFood);
+            break;
+          }
+          case 3: {
+            this.cereals1.push(itemFood);
+            break;
+          }
+          case 4: {
+            this.cereals2.push(itemFood);
+            break;
+          }
+          case 5: {
+            this.legumes.push(itemFood);
+            break;
+          }
+          case 6: {
+            this.AOA1.push(itemFood);
+            break;
+          }
+          case 7: {
+            this.AOA2.push(itemFood);
+            break;
+          }
+          case 8: {
+            this.AOA3.push(itemFood);
+            break;
+          }
+          case 9: {
+            this.AOA4.push(itemFood);
+            break;
+          }
+          case 10: {
+            this.milk1.push(itemFood);
+            break;
+          }
+          case 11: {
+            this.milk2.push(itemFood);
+            break;
+          }
+          case 12: {
+            this.milk3.push(itemFood);
+            break;
+          }
+          case 13: {
+            this.milk4.push(itemFood);
+            break;
+          }
+          case 14: {
+            this.oils1.push(itemFood);
+            break;
+          }
+          case 15: {
+            this.oils2.push(itemFood);
+            break;
+          }
+          case 16: {
+            this.sugars1.push(itemFood);
+            break;
+          }
+          case 17: {
+            this.sugars2.push(itemFood);
+            break;
+          }
+          case 18: {
+            this.freeEnergy.push(itemFood);
+            break;
+          }
         }
       }
       this.loaded = true;
@@ -71,19 +155,7 @@ export class FoodPreferencesComponent implements OnInit {
     // Guarda las preferencias asociando el id de la comida con el de usuario
     this.submitted = true;
     let item;
-    for (item of this.itemsColumnA) {
-      const element = <HTMLInputElement> document.getElementById(item.id.toString());
-      if (element.checked) {
-        this.selectedFoods.push(new FoodPreferencePost(this.userService.actualUser.id, item.id));
-      }
-    }
-    for (item of this.itemsColumnB) {
-      const element = <HTMLInputElement> document.getElementById(item.id.toString());
-      if (element.checked) {
-        this.selectedFoods.push(new FoodPreferencePost(this.userService.actualUser.id, item.id));
-      }
-    }
-    for (item of this.itemsColumnC) {
+    for (item of this.foods) {
       const element = <HTMLInputElement> document.getElementById(item.id.toString());
       if (element.checked) {
         this.selectedFoods.push(new FoodPreferencePost(this.userService.actualUser.id, item.id));

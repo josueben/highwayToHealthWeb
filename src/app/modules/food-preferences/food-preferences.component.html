@@ -8,8 +8,8 @@
         <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
             <div class="col s12 m12 l12">
               <div class="col s12 m6 l4">
-                <h5 class="center-align">Categoría 1</h5>
-                  <mz-checkbox-container *ngFor="let item of this.itemsColumnA">
+                <h5 class="center-align">Frutas</h5>
+                  <mz-checkbox-container *ngFor="let item of this.fruits">
                     <input mz-checkbox
                       [label]="item.name"
                       [id]="item.id"
@@ -19,8 +19,8 @@
               </div>
 
               <div class="col s12 m6 l4">
-                <h5 class="center-align">Categoría 2</h5>
-                <mz-checkbox-container *ngFor="let item of this.itemsColumnB">
+                <h5 class="center-align">Verduras</h5>
+                <mz-checkbox-container *ngFor="let item of this.vegetables">
                   <input mz-checkbox
                     [label]="item.name"
                     [id]="item.id"
@@ -30,8 +30,173 @@
               </div>
 
               <div class="col s12 m6 l4">
-                <h5 class="center-align">Categoría 3</h5>
-                <mz-checkbox-container *ngFor="let item of this.itemsColumnC">
+                <h5 class="center-align">Cereales sin grasa</h5>
+                <mz-checkbox-container *ngFor="let item of this.cereals1">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Cereales con grasa</h5>
+                <mz-checkbox-container *ngFor="let item of this.cereals2">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Leguminosas</h5>
+                <mz-checkbox-container *ngFor="let item of this.legumes">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">A.O.A muy bajos en grasa</h5>
+                <mz-checkbox-container *ngFor="let item of this.AOA1">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">A.O.A bajos en grasa</h5>
+                <mz-checkbox-container *ngFor="let item of this.AOA2">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">A.O.A moderado en grasa</h5>
+                <mz-checkbox-container *ngFor="let item of this.AOA3">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">A.O.A alto en grasa</h5>
+                <mz-checkbox-container *ngFor="let item of this.AOA4">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Leche descremada</h5>
+                <mz-checkbox-container *ngFor="let item of this.milk1">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Leche semidescremada</h5>
+                <mz-checkbox-container *ngFor="let item of this.milk2">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Leche entera</h5>
+                <mz-checkbox-container *ngFor="let item of this.milk3">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Leche con azúcar</h5>
+                <mz-checkbox-container *ngFor="let item of this.milk4">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Aceites y grasas</h5>
+                <mz-checkbox-container *ngFor="let item of this.oils1">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Aceites y grasas con proteínas</h5>
+                <mz-checkbox-container *ngFor="let item of this.oils2">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Azúcares sin grasa</h5>
+                <mz-checkbox-container *ngFor="let item of this.sugars1">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Azúcares con grasa</h5>
+                <mz-checkbox-container *ngFor="let item of this.sugars2">
+                  <input mz-checkbox
+                    [label]="item.name"
+                    [id]="item.id"
+                    type="checkbox"
+                    [filledIn]="true">
+                </mz-checkbox-container>
+              </div>
+
+              <div class="col s12 m6 l4">
+                <h5 class="center-align">Alimentos libres de energía</h5>
+                <mz-checkbox-container *ngFor="let item of this.freeEnergy">
                   <input mz-checkbox
                     [label]="item.name"
                     [id]="item.id"

@@ -1,10 +1,12 @@
 export class FoodPreferenceAnswer {
     id: number;
     name: string;
+    kind: number;
 
-    constructor(_id: number, _name: string) {
+    constructor(_id: number, _name: string, _kind: number) {
         this.id = _id;
         this.name = _name;
+        this.kind = _kind;
     }
 }
 
