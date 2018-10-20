@@ -1,5 +1,6 @@
+<div class="container-dnny">
 <div>
-  <h5 class="center">Generar dieta</h5>
+  <span class="title center-align">Generar dieta</span>
   <div></div>
   <form [formGroup]="dietForm" (ngSubmit)="onSubmit()">
     <div class="input-field col s12 m6 l4" style="margin-top:0px;">
@@ -7,7 +8,7 @@
         <select mz-select formControlName="purpose" id="options-select" [placeholder]="'Propósito de la dieta'" [ngClass]="{'is-invalid': submitted && f.purpose.errors}">
           <option value="Perder">Bajar de peso</option>
           <option value="Mantener">Mantener peso</option>
-          <option value="Aumentar">Ganar peso</option>
+          <option value="Aumentar">Aumentar masa muscular</option>
         </select>
         <div *ngIf="submitted && f.purpose.errors" class="invalid-feedback">
           <div *ngIf="f.purpose.errors.required">*Selecciona un propósito</div>
@@ -18,8 +19,8 @@
   <div class="col s6 m6 l6">
     <a (click)="generateDiet()" class="waves-effect waves-light btn">Crear dieta</a>
   </div>
-  <div *ngIf="this.dietGenerated" class="col s12 m12 l12 data-diet">
-    <h6>Total de calorias: {{this.totalCalories}}</h6>
+  <div *ngIf="this.dietGenerated" class="col s12 m12 l12 data-diet wrap">
+    <h6>Total de calorias: {{this.dietGeneratedData.Calorias}}</h6>
     <table class="responsive-table">
         <thead>
           <tr>
@@ -92,4 +93,5 @@
         </tbody>
       </table>
   </div>  
+</div>
 </div>

@@ -52,7 +52,7 @@ export class DietComponent implements OnInit {
     // Aqui lee la respuesta y carga la informacion en el arreglo para que
     // se muestre en la pagina web
     this.dietService.setDietToUser(dietToPost).subscribe((response: DietAnswer) => {
-      console.log(response.AceitesGrasasCP);
+      console.log(response);
       this.dietGeneratedData = response;
     });
   }

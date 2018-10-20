@@ -39,4 +39,5 @@ export class DietAnswer {
     AzucaresSinGrasa: number;
     AzucaresConGrasa: number;
     AlimentosLibresDeEnergia: number;
+    Calorias: number;
 }
