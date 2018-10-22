@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MzButtonModule, MzInputModule, MzSelectModule, MzCheckboxModule, MzTimepickerModule, MzCardModule } from 'ngx-materialize';
+import { MzButtonModule, MzInputModule, MzSelectModule, MzCheckboxModule, MzTimepickerModule,
+  MzCardModule, MzModalModule, MzIconModule, MzIconMdiModule, MzPaginationModule, MzToastModule  } from 'ngx-materialize';
 import { MzSidenavModule, MzRadioButtonModule  } from 'ngx-materialize';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -45,8 +46,13 @@ import { NutritionalInformationComponent } from './modules/nutritional-informati
     MzCheckboxModule,
     MzTimepickerModule,
     MzCardModule,
+    MzModalModule,
     MzSidenavModule,
     MzRadioButtonModule,
+    MzIconModule,
+    MzIconMdiModule,
+    MzPaginationModule,
+    MzToastModule,
     RouterModule.forRoot([
       {path: '', component: LogInComponent},
       {path: 'log-in', component: LogInComponent},
