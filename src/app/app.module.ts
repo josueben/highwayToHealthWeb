@@ -16,6 +16,7 @@ import { TracingComponent } from './modules/tracing/tracing.component';
 import { DietComponent } from './modules/diet/diet.component';
 import { SidenavComponent } from './modules/sidenav/sidenav.component';
 import { RecordOfMeasuresComponent } from './modules/record-of-measures/record-of-measures.component';
+import { NutritionalInformationComponent } from './modules/nutritional-information/nutritional-information.component';
 
 
 
@@ -30,7 +31,8 @@ import { RecordOfMeasuresComponent } from './modules/record-of-measures/record-o
     TracingComponent,
     DietComponent,
     SidenavComponent,
-    RecordOfMeasuresComponent
+    RecordOfMeasuresComponent,
+    NutritionalInformationComponent
   ],
   imports: [
     BrowserModule,

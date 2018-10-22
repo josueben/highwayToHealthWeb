@@ -9,7 +9,7 @@
 
     <div class="row">
 
-        <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="createUserForm">
 <!--input-field col s12 offset-m1 m5 offset-l1 l5-->
           <div class="input-field col s12 m6 l4">
             <input id="username" formControlName="username" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">

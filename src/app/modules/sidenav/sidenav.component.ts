@@ -11,7 +11,7 @@ export class SidenavComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private userService: UserService
+    public userService: UserService
   ) { }
 
   ngOnInit() {

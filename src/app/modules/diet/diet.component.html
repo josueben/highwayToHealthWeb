@@ -2,7 +2,7 @@
 <div>
   <span class="title center-align">Generar dieta</span>
   <div></div>
-  <form [formGroup]="dietForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="dietForm">
     <div class="input-field col s12 m6 l4" style="margin-top:0px;">
       <mz-select-container>
         <select mz-select formControlName="purpose" id="options-select" [placeholder]="'Propósito de la dieta'" [ngClass]="{'is-invalid': submitted && f.purpose.errors}">

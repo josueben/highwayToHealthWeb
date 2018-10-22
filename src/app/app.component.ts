@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'HighwayToHealthWeb';
 
   constructor(
-    private userService: UserService) {
+    public userService: UserService) {
       this.userService.getUserSession();
   }
 }
