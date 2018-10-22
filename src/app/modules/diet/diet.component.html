@@ -1,7 +1,6 @@
 <div class="container-dnny">
-<div>
   <span class="title center-align">Generar dieta</span>
-  <div></div>
+  
   <form [formGroup]="dietForm">
     <div class="input-field col s12 m6 l4" style="margin-top:0px;">
       <mz-select-container>
@@ -20,13 +19,12 @@
     <a (click)="CreatedDiet.openModal()" class="waves-effect waves-light btn">Crear dieta</a>
   </div>
 
-  <!--Module-->
   <mz-modal *ngInit="generateDiet()" #CreatedDiet [options]="modalOptions">
     <mz-modal-header>
       <h4>Dieta creada exitosamente!</h4>
     </mz-modal-header>
     <mz-modal-content>
-      <!--Contenido-->
+
       <div *ngIf="this.dietGenerated" class="col s12 m12 l12 data-diet wrap">
         <h6>Total de calorias: {{this.dietGeneratedData.Calorias}}</h6>
         <table class="responsive-table">
@@ -101,14 +99,11 @@
             </tbody>
           </table>
       </div>
-      <!--Contenido-->
+
     </mz-modal-content>
     <mz-modal-footer>
       <button mz-button [flat]="true" mz-modal-close>Simón</button>
     </mz-modal-footer>
   </mz-modal>
 
-
-  <!--/Module-->
-</div>
 </div>
