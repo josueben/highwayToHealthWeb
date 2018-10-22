@@ -17,81 +17,98 @@
     </div>
   </form>
   <div class="col s6 m6 l6">
-    <a (click)="generateDiet()" class="waves-effect waves-light btn">Crear dieta</a>
+    <a (click)="CreatedDiet.openModal()" class="waves-effect waves-light btn">Crear dieta</a>
   </div>
-  <div *ngIf="this.dietGenerated" class="col s12 m12 l12 data-diet wrap">
-    <h6>Total de calorias: {{this.dietGeneratedData.Calorias}}</h6>
-    <table class="responsive-table">
-        <thead>
-          <tr>
-              <th>Frutas</th>
-              <th>Verduras</th>
-              <th>Cereales sin grasa</th>
-              <th>Cereales con grasa</th>
-              <th>Leguminosas</th>
-              <th>A.O.A muy bajos en grasa</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{this.dietGeneratedData.Frutas}}</td>
-            <td>{{this.dietGeneratedData.Verduras}}</td>
-            <td>{{this.dietGeneratedData.CerealesSG}}</td>
-            <td>{{this.dietGeneratedData.CerealesCG}}</td>
-            <td>{{this.dietGeneratedData.Leguminosas}}</td>
-            <td>{{this.dietGeneratedData.AOAMuyBajoEnGrasa}}</td>
-          </tr>
-          <tr>
-        </tbody>
-      </table>
 
-      <table class="responsive-table">
-        <thead>
-          <tr>
-              <th>A.O.A bajos en grasa</th>
-              <th>A.O.A moderado en grasa</th>
-              <th>A.O.A alto en grasa</th>
-              <th>Leche descremada</th>
-              <th>Leche semidescremada</th>
-              <th>Leche entera</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{this.dietGeneratedData.AOABajoEnGrasa}}</td>
-            <td>{{this.dietGeneratedData.AOAModeradoEnGrasa}}</td>
-            <td>{{this.dietGeneratedData.AOAAltoEnGrasa}}</td>
-            <td>{{this.dietGeneratedData.LecheDescremada}}</td>
-            <td>{{this.dietGeneratedData.LecheSemidescremada}}</td>
-            <td>{{this.dietGeneratedData.LecheEntera}}</td>
-          </tr>
-          <tr>
-        </tbody>
-      </table>
+  <!--Module-->
+  <mz-modal *ngInit="generateDiet()" #CreatedDiet [options]="modalOptions">
+    <mz-modal-header>
+      <h4>Dieta creada exitosamente!</h4>
+    </mz-modal-header>
+    <mz-modal-content>
+      <!--Contenido-->
+      <div *ngIf="this.dietGenerated" class="col s12 m12 l12 data-diet wrap">
+        <h6>Total de calorias: {{this.dietGeneratedData.Calorias}}</h6>
+        <table class="responsive-table">
+            <thead>
+              <tr>
+                  <th>Frutas</th>
+                  <th>Verduras</th>
+                  <th>Cereales sin grasa</th>
+                  <th>Cereales con grasa</th>
+                  <th>Leguminosas</th>
+                  <th>A.O.A muy bajos en grasa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{this.dietGeneratedData.Frutas}}</td>
+                <td>{{this.dietGeneratedData.Verduras}}</td>
+                <td>{{this.dietGeneratedData.CerealesSG}}</td>
+                <td>{{this.dietGeneratedData.CerealesCG}}</td>
+                <td>{{this.dietGeneratedData.Leguminosas}}</td>
+                <td>{{this.dietGeneratedData.AOAMuyBajoEnGrasa}}</td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
 
-      <table class="responsive-table">
-        <thead>
-          <tr>
-              <th>Leche con azúcar</th>
-              <th>Aceites y grasas</th>
-              <th>Aceites y grasas con proteínas</th>
-              <th>Azúcares sin grasa</th>
-              <th>Azúcares con grasa</th>
-              <th>Alimentos libres de energía</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{{this.dietGeneratedData.LecheConAzucar}}</td>
-            <td>{{this.dietGeneratedData.AceitesGrasasSP}}</td>
-            <td>{{this.dietGeneratedData.AceitesGrasasCP}}</td>
-            <td>{{this.dietGeneratedData.AzucaresSinGrasa}}</td>
-            <td>{{this.dietGeneratedData.AzucaresConGrasa}}</td>
-            <td>{{this.dietGeneratedData.AlimentosLibresDeEnergia}}</td>
-          </tr>
-          <tr>
-        </tbody>
-      </table>
-  </div>  
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                  <th>A.O.A bajos en grasa</th>
+                  <th>A.O.A moderado en grasa</th>
+                  <th>A.O.A alto en grasa</th>
+                  <th>Leche descremada</th>
+                  <th>Leche semidescremada</th>
+                  <th>Leche entera</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{this.dietGeneratedData.AOABajoEnGrasa}}</td>
+                <td>{{this.dietGeneratedData.AOAModeradoEnGrasa}}</td>
+                <td>{{this.dietGeneratedData.AOAAltoEnGrasa}}</td>
+                <td>{{this.dietGeneratedData.LecheDescremada}}</td>
+                <td>{{this.dietGeneratedData.LecheSemidescremada}}</td>
+                <td>{{this.dietGeneratedData.LecheEntera}}</td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+
+          <table class="responsive-table">
+            <thead>
+              <tr>
+                  <th>Leche con azúcar</th>
+                  <th>Aceites y grasas</th>
+                  <th>Aceites y grasas con proteínas</th>
+                  <th>Azúcares sin grasa</th>
+                  <th>Azúcares con grasa</th>
+                  <th>Alimentos libres de energía</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{this.dietGeneratedData.LecheConAzucar}}</td>
+                <td>{{this.dietGeneratedData.AceitesGrasasSP}}</td>
+                <td>{{this.dietGeneratedData.AceitesGrasasCP}}</td>
+                <td>{{this.dietGeneratedData.AzucaresSinGrasa}}</td>
+                <td>{{this.dietGeneratedData.AzucaresConGrasa}}</td>
+                <td>{{this.dietGeneratedData.AlimentosLibresDeEnergia}}</td>
+              </tr>
+              <tr>
+            </tbody>
+          </table>
+      </div>
+      <!--Contenido-->
+    </mz-modal-content>
+    <mz-modal-footer>
+      <button mz-button [flat]="true" mz-modal-close>Simón</button>
+    </mz-modal-footer>
+  </mz-modal>
+
+
+  <!--/Module-->
 </div>
 </div>

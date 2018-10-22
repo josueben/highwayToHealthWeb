@@ -13,7 +13,7 @@
     border-style: solid;
     border-color: #26a69a;
     border-radius: 10px;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
 }
 
