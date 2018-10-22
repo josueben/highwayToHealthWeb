@@ -155,7 +155,7 @@ export class FoodPreferencesComponent implements OnInit {
 
   setFood() {
     // Guarda las preferencias asociando el id de la comida con el de usuario
-    this.toastService.show('Se han acutailizado tus preferencias!', 4000, 'teal lighten-3');
+    this.toastService.show('Se han actualizado tus preferencias!', 4000, 'teal lighten-3');
     this.submitted = true;
     let item;
     for (item of this.foods) {
@@ -170,10 +170,10 @@ export class FoodPreferencesComponent implements OnInit {
     } else {
       quantity = 0;
     }
+    console.log(this.selectedFoods);
     this.foodService.setUserFoods(this.selectedFoods, quantity).subscribe((response: Answer) => {
       if (response.status === 'OK') {
         this.router.navigate(['/main-menu']);
-
       }
     });
   }
