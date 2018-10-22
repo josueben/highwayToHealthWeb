@@ -1,68 +1,121 @@
 <div class="row">
+  <div class="col s12 m10 offset-m1 l10 offset-l1 center-align menu-title">
+    <span>
+      Menú Principal
+    </span>
+  </div>
   <div class="col s12 m10 offset-m1 l10 offset-l1">
-    <div class="col s12 m6 l6">
-      <mz-card
-        class=" teal lighten-2 white-text cursorPointer"
-        [horizontal]="false"
-        [hoverable]="true" (click)="goToFood()">
-        <mz-card-image>
+
+    <div class="col s12 m12 l6">
+      <mz-card class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image (click)="goToFood()">
           <img src="assets/salad.jpg" />
         </mz-card-image>
-        <mz-card-image-title class="title">
-          Elige tus comidas
+        <mz-card-image-title class="title" (click)="goToFood()">
+          Personaliza tus comidas
         </mz-card-image-title>
         <mz-card-content>
-          Seleccione los alimentos que te gustaría consumir.
+          Elige alimentos de tu preferencia.
+          <i mz-icon (click)="Food.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
-    <div class="col s12 m6 l6">
-      <mz-card
-        class="teal darken-1 white-text cursorPointer"
-        [horizontal]="false"
-        [hoverable]="true" (click)="goToMeals()">
-        <mz-card-image>
+
+    <div class="col s12 m12 l6">
+      <mz-card class="teal darken-1 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image (click)="goToMeals()">
           <img src="assets/salad.jpg" />
         </mz-card-image>
-        <mz-card-image-title class="title">
+        <mz-card-image-title class="title" (click)="goToMeals()">
           Elige la hora de comidas
         </mz-card-image-title>
         <mz-card-content>
-          Puedes personalizar los horarios en los cuales puedes comer.
+          Personaliza tús horarios de comida.
+          <i mz-icon (click)="Meals.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
-    <div class="col s12 m6 l6">
-      <mz-card
-        class="teal darken-1 white-text cursorPointer"
-        [horizontal]="false"
-        [hoverable]="true" (click)="goToTracing()">
-        <mz-card-image>
+    <div class="col s12 m12 l6">
+      <mz-card class="teal darken-1 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image (click)="goToTracing()">
           <img src="assets/salad.jpg" />
         </mz-card-image>
-        <mz-card-image-title class="title">
+        <mz-card-image-title class="title" (click)="goToTracing()">
           Seguimiento
         </mz-card-image-title>
         <mz-card-content>
-          Puedes seguir el seguimiento de tus dietas.
+          Consulta el seguimiento de tu dieta.
+          <i mz-icon (click)="Tracing.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
-    <div class="col s12 m6 l6">
-      <mz-card
-        class="teal lighten-2 white-text cursorPointer"
-        [horizontal]="false"
-        [hoverable]="true" (click)="goToDiet()">
-        <mz-card-image>
+    <div class="col s12 m12 l6">
+      <mz-card class="teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image (click)="goToDiet()">
           <img src="assets/salad.jpg" />
         </mz-card-image>
-        <mz-card-image-title class="title">
+        <mz-card-image-title class="title" (click)="goToDiet()">
           Generar dieta
         </mz-card-image-title>
         <mz-card-content>
-          Consulta la dieta preparada para el día de hoy.
+          Una dieta hecha a tu medida cada día.
+          <i mz-icon (click)="Tracing.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
+
+    <!-- Modal !-->
+    <mz-modal #Food [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Personaliza tus comidas</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+      </mz-modal-footer>
+    </mz-modal>
+    <!-- /Modal !-->
+    <!-- Modal !-->
+    <mz-modal #Meals [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Elige la hora de comidas</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+      </mz-modal-footer>
+    </mz-modal>
+    <!-- /Modal !-->
+    <!-- Modal !-->
+    <mz-modal #Tracing [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Seguimiento</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+      </mz-modal-footer>
+    </mz-modal>
+    <!-- /Modal !-->
+    <!-- Modal !-->
+    <mz-modal #Diet [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Generar dieta</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+      </mz-modal-footer>
+    </mz-modal>
+    <!-- /Modal !-->
+
   </div>
 </div>

@@ -14,6 +14,9 @@ export class MainMenuComponent implements OnInit {
     private userService: UserService
   ) {
     this.userService.getUserSession();
+    // var instance = M.Carousel.init({
+    //   fullWidth: true
+    // });
   }
 
   ngOnInit() {

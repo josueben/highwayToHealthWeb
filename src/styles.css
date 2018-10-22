@@ -28,3 +28,8 @@ body{
   margin-left: 8%  !important;
   width: 84%;
 }
+
+.card .card-content {
+  padding: 0px !important;
+  font-size: 15.5px;
+}

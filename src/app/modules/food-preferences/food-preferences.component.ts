@@ -5,6 +5,7 @@ import { FoodService } from '../../services/food.service';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { isEmbeddedView } from '@angular/core/src/view/util';
+import { MzToastService  } from 'ngx-materialize';
 
 interface Answer {
   status: string;
@@ -49,7 +50,8 @@ export class FoodPreferencesComponent implements OnInit {
     private formBuilder: FormBuilder,
     private foodService: FoodService,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private toastService: MzToastService
   ) {
     this.userService.getUserSession();
     // En el constructor se carga la información de los tipos de alimentos
@@ -153,6 +155,7 @@ export class FoodPreferencesComponent implements OnInit {
 
   setFood() {
     // Guarda las preferencias asociando el id de la comida con el de usuario
+    this.toastService.show('Se han acutailizado tus preferencias!', 4000, 'teal lighten-3');
     this.submitted = true;
     let item;
     for (item of this.foods) {
@@ -170,6 +173,7 @@ export class FoodPreferencesComponent implements OnInit {
     this.foodService.setUserFoods(this.selectedFoods, quantity).subscribe((response: Answer) => {
       if (response.status === 'OK') {
         this.router.navigate(['/main-menu']);
+
       }
     });
   }

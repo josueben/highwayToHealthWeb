@@ -1,221 +1,613 @@
-<div class="container-dnny">
-  <span class="title">
-    ¿Qué alimentos le gustaría consumir?
-  </span>
 
-  <div class="wrap z-depth-5">
-    <div class="row">
-      <div class="col s8 m8 l8 white aprro responsive">
-        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
-            <div class="col s12 m12 l12">
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Frutas</h5>
-                  <mz-checkbox-container *ngFor="let item of this.fruits">
-                    <input mz-checkbox
-                      [label]="item.name"
-                      [id]="item.id"
-                      type="checkbox"
-                      [filledIn]="true">
-                  </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Verduras</h5>
-                <mz-checkbox-container *ngFor="let item of this.vegetables">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Cereales sin grasa</h5>
-                <mz-checkbox-container *ngFor="let item of this.cereals1">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Cereales con grasa</h5>
-                <mz-checkbox-container *ngFor="let item of this.cereals2">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Leguminosas</h5>
-                <mz-checkbox-container *ngFor="let item of this.legumes">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">A.O.A muy bajos en grasa</h5>
-                <mz-checkbox-container *ngFor="let item of this.AOA1">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">A.O.A bajos en grasa</h5>
-                <mz-checkbox-container *ngFor="let item of this.AOA2">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">A.O.A moderado en grasa</h5>
-                <mz-checkbox-container *ngFor="let item of this.AOA3">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">A.O.A alto en grasa</h5>
-                <mz-checkbox-container *ngFor="let item of this.AOA4">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Leche descremada</h5>
-                <mz-checkbox-container *ngFor="let item of this.milk1">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Leche semidescremada</h5>
-                <mz-checkbox-container *ngFor="let item of this.milk2">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Leche entera</h5>
-                <mz-checkbox-container *ngFor="let item of this.milk3">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Leche con azúcar</h5>
-                <mz-checkbox-container *ngFor="let item of this.milk4">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Aceites y grasas</h5>
-                <mz-checkbox-container *ngFor="let item of this.oils1">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Aceites y grasas con proteínas</h5>
-                <mz-checkbox-container *ngFor="let item of this.oils2">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Azúcares sin grasa</h5>
-                <mz-checkbox-container *ngFor="let item of this.sugars1">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Azúcares con grasa</h5>
-                <mz-checkbox-container *ngFor="let item of this.sugars2">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-              <div class="col s12 m6 l4">
-                <h5 class="center-align">Alimentos libres de energía</h5>
-                <mz-checkbox-container *ngFor="let item of this.freeEnergy">
-                  <input mz-checkbox
-                    [label]="item.name"
-                    [id]="item.id"
-                    type="checkbox"
-                    [filledIn]="true">
-                </mz-checkbox-container>
-              </div>
-
-            </div>
-        </form>
-
-      </div>
-    </div>
+<div class="row">
+  <div class="col s12 m10 offset-m1 l10 offset-l1 center-align menu-title">
+    <span>
+      ¿Qué alimentos le gustaría consumir?
+    </span>
   </div>
-  <div class="row lul">
-    <div class="col s12 m6 l12 center-align aprro">
-      <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+  <div class="col s12 m10 offset-m1 l10 offset-l1">
+
+
+    <!-- Cards !-->
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_1.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Frutas
+        </mz-card-image-title>
+        <mz-card-content style="padding: 0px;">
+        </mz-card-content>
+      </mz-card>
     </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_2.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Verduras
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_3.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Cereales sin grasa
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_4.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Cereales con grasa
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_5.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Leguminosas
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_6.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          A.O.A muy bajos en grasa
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_7.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          A.O.A bajos en grasa
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_8.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          A.O.A moderado en grasa
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_9.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          A.O.A alto en grasa
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_10.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Leche descremada
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_11.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Leche semidescremada
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_12.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Leche entera
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_13.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Leche con azucar
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_14.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Aceites y grasas
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_15.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Aceites y grasas con proteina
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_16.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Azucares sin grasa
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3 offset-l3">
+      <mz-card (click)="kind_17.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Azucares con grasa
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+
+    <div class="col s12 m4 l3">
+      <mz-card (click)="kind_18.openModal()" class=" teal lighten-2 white-text cursorPointer" [horizontal]="false" [hoverable]="true">
+        <mz-card-image>
+          <img src="assets/salad.jpg" />
+        </mz-card-image>
+        <mz-card-image-title class="title">
+          Alimentos libres de energía
+        </mz-card-image-title>
+        <mz-card-content class="nopad">
+        </mz-card-content>
+      </mz-card>
+    </div>
+    <!-- /Cards !-->
+
+    <!-- Modals !-->
+    <mz-modal #kind_1 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Frutas</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.fruits">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_2 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Verduras</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.vegetables">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_3 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Cereales sin grasa</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.cereals1">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_4 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Cereales con grasa</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.cereals2">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_5 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Leguminosas</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.legumes">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_6 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>A.O.A muy bajos en grasa</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.AOA1">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_7 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>A.O.A bajos en grasa</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.AOA2">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_8 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>A.O.A moderado en grasa</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.AOA3">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_9 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>A.O.A alto en grasa</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.AOA4">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_10 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Leche descremada</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.milk1">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_11 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Leche semidescremada</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.milk2">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_12 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Leche entera</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.milk3">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_13 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Leche con azucar</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.milk4">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_14 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Aceites y grasas</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.oils1">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_15 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Aceites y grasas con proteinas</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.oils2">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_16 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Azucares sin grasa</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.sugars1">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_17 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Azucares con grasa</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.sugars2">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+
+    <mz-modal #kind_18 [options]="modalOptions">
+      <mz-modal-header>
+        <h4>Alimentos libres de energía</h4>
+      </mz-modal-header>
+      <mz-modal-content>
+        <form [formGroup]="setFoodPreferences" (ngSubmit)="onSubmit()">
+          <mz-checkbox-container *ngFor="let item of this.freeEnergy">
+            <input mz-checkbox
+              [label]="item.name"
+              [id]="item.id"
+              type="checkbox"
+              [filledIn]="true">
+          </mz-checkbox-container>
+        </form>
+      </mz-modal-content>
+      <mz-modal-footer>
+        <button (click)="setFood()" class="m-buttons" class="waves-effect waves-light btn"><i class="material-icons">save</i>Guardar</button>
+      </mz-modal-footer>
+    </mz-modal>
+    <!-- /Modals !-->
+
+
+
+
   </div>
 </div>
