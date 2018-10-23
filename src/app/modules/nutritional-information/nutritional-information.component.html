@@ -14,16 +14,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>{{this.FoodInfo.name}}</td>
-        <td>{{this.FoodInfo.kind}}</td>
-        <td>{{this.FoodInfo.portion}}</td>
-        <td>{{this.FoodInfo.unity}}</td>
-        <td>{{this.FoodInfo.net_weight}}</td>
-        <td>{{this.FoodInfo.calories}}</td>
-        <td>{{this.FoodInfo.protein}}</td>
-        <td>{{this.FoodInfo.lipids}}</td>
-        <td>{{this.FoodInfo.cho}}</td>
+      <tr *ngFor="let item of this.UserFoods">
+        <td>{{item.name}}</td>
+        <td>{{item.kind}}</td>
+        <td>{{item.portion}}</td>
+        <td>{{item.unity}}</td>
+        <td>{{item.net_weight}}</td>
+        <td>{{item.calories}}</td>
+        <td>{{item.protein}}</td>
+        <td>{{item.lipids}}</td>
+        <td>{{item.cho}}</td>
       </tr>
       <tr>
     </tbody>
