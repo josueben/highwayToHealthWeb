@@ -63,7 +63,9 @@ import { NutritionalInformationComponent } from './modules/nutritional-informati
       {path: 'meal-preferences', component: MealPreferenceComponent},
       {path: 'tracing', component: TracingComponent},
       {path: 'main-menu', component: MainMenuComponent},
-      {path: 'diet', component: DietComponent}
+      {path: 'diet', component: DietComponent },
+      {path: 'nutritional-info', component: NutritionalInformationComponent },
+      {path: 'measures', component: RecordOfMeasuresComponent },
     ])
   ],
   providers: [],
