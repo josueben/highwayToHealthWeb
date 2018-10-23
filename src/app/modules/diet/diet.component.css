@@ -1,11 +1,21 @@
-.data-diet{
-    margin-top: 5%;
+.cursorPointer{
+    cursor: pointer;
+    margin-top: 2.5%;
+    margin-bottom: 3%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+
+    border-style: solid;
+    border-color: #26a69a;
+    border-radius: 10px;
+    overflow-x: hidden;
+    position: relative;
 }
 
-.container-dnny {
+.container {
   width: 100%;
   padding: 15px;
-  margin-top: 2%;
+  margin-top: 1%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -19,8 +29,7 @@
 }
 
 .wrap {
-  width: 95%;
-  margin-top: 6%;
+  width: 800px;
   background: #fff;
   border-radius: 10px;
   border-style: solid;
@@ -29,14 +38,33 @@
   position: relative;
 }
 
+.create {
+  margin-top: 10px;
+}
+
+.title-hdiw {
+  font-weight: bold;
+  font-size: 30px;
+  color: #26a69a;
+  text-align: center;
+  padding-top: 20px;
+}
+
 .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.info {
+  padding-bottom: 10px;
+}
+
+.menu-title {
   font-weight: bold;
   font-size: 60px;
   color: #26a69a;
   text-align: center;
-  margin-bottom: 0px;
-}
-
-table.highlight tbody tr:hover {
-    background-color: #ccffcc !important;
+  margin-bottom: 20px;
 }

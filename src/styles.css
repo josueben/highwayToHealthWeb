@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-html, body { 
+html, body {
   background-color: #e6fff2;
   font-family: Lato;
   overflow-x: hidden;
