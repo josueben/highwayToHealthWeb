@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MzButtonModule, MzInputModule, MzSelectModule, MzCheckboxModule, MzTimepickerModule,
-  MzCardModule, MzModalModule, MzIconModule, MzIconMdiModule, MzPaginationModule, MzToastModule  } from 'ngx-materialize';
+  MzCardModule, MzModalModule, MzIconModule, MzIconMdiModule, MzPaginationModule, MzToastModule,
+  MzTooltipModule } from 'ngx-materialize';
 import { MzSidenavModule, MzRadioButtonModule  } from 'ngx-materialize';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -53,6 +54,7 @@ import { NutritionalInformationComponent } from './modules/nutritional-informati
     MzIconMdiModule,
     MzPaginationModule,
     MzToastModule,
+    MzTooltipModule,
     RouterModule.forRoot([
       {path: '', component: LogInComponent},
       {path: 'log-in', component: LogInComponent},
