@@ -1,31 +1,35 @@
-<div>
-  <table class="responsive-table">
-    <thead>
-      <tr>
+<!-- <table class="responsive-table"> -->
+<div class="container">
+  <span class="title">
+    Alimentos favoritos
+  </span>
+  <div class="wrap z-depth-5">
+    <table class="striped highlight centered responsive-table">
+      <thead>
+        <tr>
           <th>Nombre</th>
           <th>Tipo</th>
-          <th>Porción</th>
-          <th>Unidad</th>
-          <th>Peso neto</th>
+          <th>Porción p/u</th>
+          <th>Peso neto (g)</th>
           <th>Calorías</th>
-          <th>Proteínas</th>
-          <th>Lípidos</th>
-          <th>Carbohidratos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of this.UserFoods">
-        <td>{{item.name}}</td>
-        <td>{{item.kind}}</td>
-        <td>{{item.portion}}</td>
-        <td>{{item.unity}}</td>
-        <td>{{item.net_weight}}</td>
-        <td>{{item.calories}}</td>
-        <td>{{item.protein}}</td>
-        <td>{{item.lipids}}</td>
-        <td>{{item.cho}}</td>
-      </tr>
-      <tr>
-    </tbody>
-  </table>
+          <th>Proteínas (g)</th>
+          <th>Lípidos (g)</th>
+          <th>Carbohidratos (g)</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of this.UserFoods">
+          <td>{{item.name}}</td>
+          <td>{{item.kind}}</td>
+          <td>{{item.portion}} {{item.unity}}</td>
+          <td>{{item.net_weight}}</td>
+          <td>{{item.calories}}</td>
+          <td>{{item.protein}}</td>
+          <td>{{item.lipids}}</td>
+          <td>{{item.cho}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

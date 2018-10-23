@@ -1,5 +1,4 @@
 .row{
-    margin-top: 1.5%;
     margin-bottom: 2.5%;
 }
 
@@ -36,4 +35,16 @@
 
 .modal {
   background-color: #26a69a !important;
+}
+
+.title-hdiw {
+  font-weight: bold;
+  font-size: 30px;
+  color: #26a69a;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.info {
+  padding-bottom: 10px;
 }
