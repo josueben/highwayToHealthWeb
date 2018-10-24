@@ -8,15 +8,13 @@
         <tr>
           <th>Peso</th>
           <th>Fecha</th>
-          <th>Calorías consumidas</th>
         </tr>
       </thead>
 
       <tbody>
         <tr *ngFor="let item of this.tracings">
           <td>{{item.weight}}</td>
-          <td>{{item.weight}}</td>
-          <td>{{item.calories}}</td>
+          <td>{{item.date}}</td>
         </tr>
       </tbody>
     </table>

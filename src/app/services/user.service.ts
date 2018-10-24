@@ -43,6 +43,18 @@ export class UserService {
     return this.http.post(method, body, options);
   }
 
+  getTracingOfUser() {
+    const method = this.url + '/GetTracingUser';
+    let headers;
+    headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'ICKKCK',
+      'id_user': this.actualUser.id.toString()
+    });
+    const options = { headers: headers };
+    return this.http.get(method, options);
+  }
+
   getUserSession() {
     console.log('Holi');
     if (sessionStorage.getItem('user') === null) {

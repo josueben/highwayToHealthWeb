@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tracing } from '../../classes/Tracing';
 import { Diet } from '../../classes/Diet';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-tracing',
@@ -11,16 +12,19 @@ import { Diet } from '../../classes/Diet';
 export class TracingComponent implements OnInit {
   tracings: Tracing[] = [];
 
-  constructor() { }
+  constructor(
+    public userService: UserService
+  ) { }
 
   ngOnInit() {
     // Carga de los datos de las últimas dietas en base al criterio de búsqueda
-    const itemsQuant = 5;
-    let iterator = 0;
-    for (iterator; iterator < itemsQuant; iterator++) {
-      const diet: Diet = new Diet('Bajar de peso', 1800, '25 de Mayo del 2018');
-      this.tracings.push(new Tracing(1, 90 - iterator, diet.date, diet.calories));
-    }
+    this.userService.getTracingOfUser().subscribe((response: Tracing[]) => {
+      for (const item of response) {
+        this.tracings.push(new Tracing(item.weight, item.date));
+      }
+      console.log(response);
+      console.log(this.tracings);
+    });
   }
 
 }
