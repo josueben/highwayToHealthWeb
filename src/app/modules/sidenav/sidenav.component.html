@@ -6,7 +6,7 @@
 
   <mz-sidenav-divider></mz-sidenav-divider>
 
-  <div class="profile">
+  <div class="profile" (click)="profile.openModal()">
     <mz-sidenav-subheader><i class="material-icons">account_circle</i>{{this.userService.actualUser.name}} {{this.userService.actualUser.lastname}}</mz-sidenav-subheader>
     <mz-sidenav-subheader>{{this.userService.actualUser.email}}</mz-sidenav-subheader>
   </div>
@@ -62,3 +62,19 @@
 <button mz-button id="btn-sidenav-demo"><i class="material-icons right">menu</i>
   Menu
 </button>
+
+<!-- Modals !-->
+<mz-modal #profile [fixedFooter]="true" [options]="modalOptions">
+  <mz-modal-header>
+    <div class="title-hdiw info">{{this.userService.actualUser.name}} {{this.userService.actualUser.lastname}}</div>
+  </mz-modal-header>
+  <mz-modal-content>
+    <!--=========================Form============================-->
+        
+    <!--=========================Form============================-->
+  </mz-modal-content>
+  <mz-modal-footer>
+    <button mz-button [flat]="true" mz-modal-close>Guardar</button>
+  </mz-modal-footer>
+</mz-modal>
+<!-- /Modals !-->
