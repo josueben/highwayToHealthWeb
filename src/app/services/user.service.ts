@@ -20,9 +20,24 @@ export class UserService {
 
   createUser( user: User) {
     const method = this.url + '/CreateUser';
-    const headers = new HttpHeaders({
+    let headers;
+    headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'ICKKCK' });
+      'Authorization': 'ICKKCK'
+    });
+    const options = { headers: headers };
+    const body = JSON.stringify(user);
+    return this.http.post(method, body, options);
+  }
+
+  updateUser( user: User) {
+    const method = this.url + '/UpdateUser';
+    let headers;
+    headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'ICKKCK',
+      'id_user': this.actualUser.id.toString()
+    });
     const options = { headers: headers };
     const body = JSON.stringify(user);
     return this.http.post(method, body, options);
