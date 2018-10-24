@@ -40,4 +40,12 @@ export class MainMenuComponent implements OnInit {
     this.router.navigate(['/diet']);
   }
 
+  goToMeasures() {
+    this.router.navigate(['/measures']);
+  }
+
+  goToNutInfo() {
+    this.router.navigate(['/nutritional-info']);
+  }
+
 }
