@@ -306,12 +306,12 @@
     <div class="title-hdiw info">Cambiando dieta</div>
   </mz-modal-header>
   <mz-modal-content>
-    <h6 class="center">¿Qué es lo que no te gustó?</h6>
+    <h5 class="center">¿Qué es lo que no te gustó?</h5>
     <form [formGroup]="dietChange">
       <div class="input-field col s12 m6 l6" style="margin-top:0px;">
         <h6>Cantidad de comida</h6>
         <mz-select-container>
-          <select mz-select formControlName="incomodity" id="options-select" [placeholder]="'Cantidades'" [ngClass]="{'is-invalid': submittedChange && g.incomodity.errors}">
+          <select mz-select formControlName="incomodity" id="options-select" [placeholder]="'Selecciona'" [ngClass]="{'is-invalid': submittedChange && g.incomodity.errors}">
             <option value="1">Muchas</option>
             <option value="2">Pocas</option>
           </select>
@@ -323,7 +323,7 @@
       <div class="input-field col s12 m6 l6" style="margin-top:0px;">
         <h6>Tipo de comida</h6>
         <mz-select-container>
-          <select mz-select formControlName="kind" id="options-select" [placeholder]="'Tipo de comida'" [ngClass]="{'is-invalid': submittedChange && g.kind.errors}">
+          <select mz-select formControlName="kind" id="options-select" [placeholder]="'Selecciona'" [ngClass]="{'is-invalid': submittedChange && g.kind.errors}">
             <option value="1">Frutas</option>
             <option value="2">Verduras</option>
             <option value="3">Cereales sin grasa</option>
