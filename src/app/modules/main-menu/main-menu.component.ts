@@ -13,10 +13,8 @@ export class MainMenuComponent implements OnInit {
     private router: Router,
     private userService: UserService
   ) {
-    this.userService.getUserSession();
-    // var instance = M.Carousel.init({
-    //   fullWidth: true
-    // });
+    // this.userService.showNotification('Comida', '5:00pm');
+    this.userService.checkHour();
   }
 
   ngOnInit() {
@@ -38,6 +36,14 @@ export class MainMenuComponent implements OnInit {
 
   goToDiet() {
     this.router.navigate(['/diet']);
+  }
+
+  goToMeasures() {
+    this.router.navigate(['/measures']);
+  }
+
+  goToNutInfo() {
+    this.router.navigate(['/nutritional-info']);
   }
 
 }

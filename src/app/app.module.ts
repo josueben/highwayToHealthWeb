@@ -19,8 +19,8 @@ import { DietComponent } from './modules/diet/diet.component';
 import { SidenavComponent } from './modules/sidenav/sidenav.component';
 import { RecordOfMeasuresComponent } from './modules/record-of-measures/record-of-measures.component';
 import { NutritionalInformationComponent } from './modules/nutritional-information/nutritional-information.component';
-
-
+import { ChartsModule } from 'ng2-charts';
+import { DistributionComponent } from './modules/distribution/distribution.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { NutritionalInformationComponent } from './modules/nutritional-informati
     DietComponent,
     SidenavComponent,
     RecordOfMeasuresComponent,
-    NutritionalInformationComponent
+    NutritionalInformationComponent,
+    DistributionComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +56,7 @@ import { NutritionalInformationComponent } from './modules/nutritional-informati
     MzPaginationModule,
     MzToastModule,
     MzTooltipModule,
+    ChartsModule,
     RouterModule.forRoot([
       {path: '', component: LogInComponent},
       {path: 'log-in', component: LogInComponent},

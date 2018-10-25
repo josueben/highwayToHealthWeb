@@ -3,7 +3,7 @@
 
 html, body {
   background-color: #e6fff2;
-  font-family: Lato;
+  font-family: Lato !important;
   overflow-x: hidden;
 }
 

@@ -54,6 +54,7 @@ export class FoodPreferencesComponent implements OnInit {
     private toastService: MzToastService
   ) {
     this.userService.getUserSession();
+    this.userService.checkHour();
     // En el constructor se carga la información de los tipos de alimentos
     // lo cargamos aquí para que se vean desde el comienzo, el ws nos los da y lo agrupamos
     this.foodService.getAllFoods().subscribe((response: FoodPreferenceAnswer[]) => {

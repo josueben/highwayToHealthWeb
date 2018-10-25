@@ -65,7 +65,7 @@
           </div>
 
           <div class="input-field col s12 m6 l4">
-            <input id="age" formControlName="age" type="number" class="validate" [ngClass]="{ 'is-invalid': submitted && f.age.errors }">
+            <input id="age" formControlName="age" minlength="1" maxlength="2" type="number" class="validate" [ngClass]="{ 'is-invalid': submitted && f.age.errors }">
             <label for="age">Edad</label>
             <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
               <div *ngIf="f.age.errors.required">*La edad es requerida</div>
@@ -73,7 +73,7 @@
           </div>
 
           <div class="input-field col s12 m6 l4">
-            <input id="weight" formControlName="weight" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.weight.errors }">
+            <input id="weight" formControlName="weight" minlength="2" maxlength="3" type="number" class="validate" [ngClass]="{ 'is-invalid': submitted && f.weight.errors }">
             <label for="weight">Peso (kg)</label>
             <div *ngIf="submitted && f.weight.errors" class="invalid-feedback">
               <div *ngIf="f.weight.errors.required">*El peso es requerido</div>
@@ -82,7 +82,7 @@
           </div>
 
           <div class="input-field col s12 m6 l4">
-            <input id="height" formControlName="height" type="text" class="validate" [ngClass]="{ 'is-invalid': submitted && f.height.errors }">
+            <input id="height" formControlName="height" minlength="2" maxlength="3" type="number" class="validate" [ngClass]="{ 'is-invalid': submitted && f.height.errors }">
             <label for="height">Altura (cm)</label>
             <div *ngIf="submitted && f.height.errors" class="invalid-feedback">
               <div *ngIf="f.height.errors.required">*El nombre es requerido</div>

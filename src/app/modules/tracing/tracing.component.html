@@ -1,22 +1,40 @@
+<script src="node_modules/chart.js/src/chart.js"></script>
+
+
 <div class="container">
   <span class="title">
     Seguimiento
   </span>
+
+  <div *ngIf="this.loaded" class="row">
+    <div class="col-md-6">
+      <div style="display: block;">
+      <canvas baseChart width="400" height="400"
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+      </div>
+    </div>
+  </div>
+
   <div class="wrap z-depth-5">
     <table class="striped highlight centered">
       <thead>
         <tr>
           <th>Peso</th>
           <th>Fecha</th>
-          <th>Calorías consumidas</th>
         </tr>
       </thead>
 
       <tbody>
         <tr *ngFor="let item of this.tracings">
           <td>{{item.weight}}</td>
-          <td>{{item.weight}}</td>
-          <td>{{item.calories}}</td>
+          <td>{{item.date}}</td>
         </tr>
       </tbody>
     </table>
