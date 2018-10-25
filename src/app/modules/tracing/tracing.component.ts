@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tracing } from '../../classes/Tracing';
 import { Diet } from '../../classes/Diet';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -11,10 +12,19 @@ import { UserService } from '../../services/user.service';
 
 export class TracingComponent implements OnInit {
 
+  setData: FormGroup;
+
+  public options: Pickadate.DateOptions = {
+    format: 'dddd, dd mmm, yyyy',
+    formatSubmit: 'yyyy-mm-dd',
+  };
+
   tracings: Tracing[] = [];
   weights: number[] = [];
   dates: string[] = [];
   loaded = false;
+
+  get f() { return this.setData.controls; }
 
   // ==================== Chart ====================
 
@@ -41,17 +51,6 @@ export class TracingComponent implements OnInit {
   public lineChartLegend = true;
   public lineChartType = 'line';
 
-  /*public randomize(): void {
-    const _lineChartData: Array<any> = new Array(this.lineChartData.length);
-    for (let i = 0; i < this.lineChartData.length; i++) {
-      _lineChartData[i] = {data: new Array(this.lineChartData[i].data.length), label: this.lineChartData[i].label};
-      for (let j = 0; j < this.lineChartData[i].data.length; j++) {
-        _lineChartData[i].data[j] = Math.floor((Math.random() * 100) + 1);
-      }
-    }
-    this.lineChartData = _lineChartData;
-  }*/
-
   // events
   public chartClicked(e: any): void {
   }
@@ -61,24 +60,50 @@ export class TracingComponent implements OnInit {
 
   // ==================== /Chart ====================
 
+  search() {
+    console.log(this.f.date.value);
+    const date: string = this.f.date.value;
+    this.userService.getTracingOfUser(date).subscribe((response: Tracing[]) => {
+      if (response.length > 0) {
+        for (const item of response) {
+          this.tracings.push(new Tracing(item.weight, item.date));
+          this.weights.push(item.weight);
+          this.dates.push(item.date);
+        }
+        this.lineChartData = [
+          {data: this.weights, label: 'Peso'}
+        ];
+        this.lineChartLabels = this.dates;
+        this.loaded = true;
+      }
+    });
+  }
+
   constructor(
-    public userService: UserService
+    public userService: UserService,
+    private formBuilder: FormBuilder,
   ) {
+    this.setData = this.formBuilder.group({
+      date: ['', Validators.required]
+    });
     this.userService.getUserSession();
     this.userService.checkHour();
+    // console.log(this.f.date.value);
     // Carga de los datos de las últimas dietas en base al criterio de búsqueda
-    this.userService.getTracingOfUser().subscribe((response: Tracing[]) => {
-      for (const item of response) {
-        this.tracings.push(new Tracing(item.weight, item.date));
-        this.weights.push(item.weight);
-        this.dates.push(item.date);
+    /*this.userService.getTracingOfUser(this.f.date.value).subscribe((response: Tracing[]) => {
+      if (response.length > 0) {
+        for (const item of response) {
+          this.tracings.push(new Tracing(item.weight, item.date));
+          this.weights.push(item.weight);
+          this.dates.push(item.date);
+        }
+        this.lineChartData = [
+          {data: this.weights, label: 'Peso'}
+        ];
+        this.lineChartLabels = this.dates;
+        this.loaded = true;
       }
-      this.lineChartData = [
-        {data: this.weights, label: 'Peso'}
-      ];
-      this.lineChartLabels = this.dates;
-      this.loaded = true;
-    });
+    });*/
   }
 
   ngOnInit() {

@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MzButtonModule, MzInputModule, MzSelectModule, MzCheckboxModule, MzTimepickerModule,
   MzCardModule, MzModalModule, MzIconModule, MzIconMdiModule, MzPaginationModule, MzToastModule,
-  MzTooltipModule } from 'ngx-materialize';
+  MzTooltipModule, MzDatepickerModule } from 'ngx-materialize';
 import { MzSidenavModule, MzRadioButtonModule  } from 'ngx-materialize';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -56,6 +56,7 @@ import { DistributionComponent } from './modules/distribution/distribution.compo
     MzPaginationModule,
     MzToastModule,
     MzTooltipModule,
+    MzDatepickerModule,
     ChartsModule,
     RouterModule.forRoot([
       {path: '', component: LogInComponent},

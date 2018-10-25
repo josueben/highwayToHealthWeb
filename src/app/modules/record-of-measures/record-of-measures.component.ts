@@ -62,6 +62,7 @@ export class RecordOfMeasuresComponent implements OnInit {
       };
       this.userService.updateUser(user).subscribe((response: Answer) => {
       if (response.status === 'OK') {
+        sessionStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/main-menu']);
         }
       });
