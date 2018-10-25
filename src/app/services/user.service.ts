@@ -53,13 +53,14 @@ export class UserService {
     return this.http.post(method, body, options);
   }
 
-  getTracingOfUser() {
+  getTracingOfUser(date: string) {
     const method = this.url + '/GetTracingUser';
     let headers;
     headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'ICKKCK',
-      'id_user': this.actualUser.id.toString()
+      'id_user': this.actualUser.id.toString(),
+      'maxDate': date.toString()
     });
     const options = { headers: headers };
     return this.http.get(method, options);

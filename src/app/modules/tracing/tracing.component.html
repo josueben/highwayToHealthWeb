@@ -6,6 +6,22 @@
     Seguimiento
   </span>
 
+  <form [formGroup]="setData">
+    <mz-datepicker-container class="col s12 m6 l6">
+      <input mz-datepicker
+        [label]="'Selecciona una fecha'"
+        [options]="options"
+        id="datepicker"
+        placeholder="Elige la fecha para el reporte "
+        formControlName="date"
+        type="text">
+    </mz-datepicker-container>
+  </form>
+
+  <div class="col s12 m6 l12 center-align aprro">
+    <a (click)="search()" class="m-buttons" class="waves-effect waves-light btn">Buscar</a>
+  </div>
+
   <div *ngIf="this.loaded" class="row">
     <div class="col-md-6">
       <div style="display: block;">
