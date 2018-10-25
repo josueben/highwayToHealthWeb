@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Food, FoodNutritional } from '../../classes/Food';
 import { FoodPreferenceAnswer } from '../../classes/FoodPreference';
 import { FoodService } from '../../services/food.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-nutritional-information',
@@ -14,10 +15,12 @@ export class NutritionalInformationComponent implements OnInit {
   public AllFoods: Food[] = [];
   public UserFoodsAnwer: FoodPreferenceAnswer[];
   public UserFoods: FoodNutritional[] = []; // Son los foods del usuario
-
   constructor(
-    public foodService: FoodService
+    public foodService: FoodService,
+    public userService: UserService
   ) {
+    this.userService.getUserSession();
+    this.userService.checkHour();
     this.foodService.getAllFoods().subscribe((response: Food[]) => {
       this.AllFoods = response;
       console.log(this.AllFoods);

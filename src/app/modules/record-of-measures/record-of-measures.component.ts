@@ -23,7 +23,10 @@ export class RecordOfMeasuresComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private router: Router
-  ) { }
+  ) {
+    this.userService.getUserSession();
+    this.userService.checkHour();
+  }
 
   ngOnInit() {
     this.editMeasures = this.formBuilder.group({

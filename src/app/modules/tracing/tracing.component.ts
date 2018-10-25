@@ -66,6 +66,8 @@ export class TracingComponent implements OnInit {
   constructor(
     public userService: UserService
   ) {
+    this.userService.getUserSession();
+    this.userService.checkHour();
     // Carga de los datos de las últimas dietas en base al criterio de búsqueda
     this.userService.getTracingOfUser().subscribe((response: Tracing[]) => {
       for (const item of response) {

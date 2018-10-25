@@ -12,7 +12,6 @@ import { DietService } from '../../services/diet.service';
   styleUrls: ['./diet.component.css']
 })
 export class DietComponent implements OnInit {
-
   calories = 0;
   dietFoods: Food[] = [];
   dietGenerated = false;
@@ -29,7 +28,7 @@ export class DietComponent implements OnInit {
     private dietService: DietService
   ) {
     this.userService.getUserSession();
-
+    this.userService.checkHour();
     this.dietForm = this.formBuilder.group({
       purpose: ['', Validators.required]
     });

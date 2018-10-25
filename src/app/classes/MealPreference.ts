@@ -9,3 +9,12 @@ export class MealPreference {
         this.hour = _hour;
     }
 }
+
+export class NotificationMeals {
+    state: number;
+
+    constructor(_state: number) {
+        this.state = _state;
+    }
+}
+
