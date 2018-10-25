@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 export class UserService {
 
-  url = 'http://localhost:5000';
+  url = 'http://192.168.1.51:5000';
   actualUser: UserResponse;
   public logged = false;
 

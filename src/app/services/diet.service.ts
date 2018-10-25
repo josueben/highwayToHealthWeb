@@ -7,7 +7,7 @@ import { DietPost, Diet } from '../classes/Diet';
 })
 export class DietService {
 
-  url = 'http://localhost:5000';
+  url = 'http://192.168.1.51:5000';
   constructor(
     private http: HttpClient
   ) { }

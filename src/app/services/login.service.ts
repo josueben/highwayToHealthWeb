@@ -7,7 +7,7 @@ import { User, UserResponse } from '../classes/User';
 })
 
 export class LoginService {
-  private url = 'http://localhost:5000';
+  private url = 'http://192.168.1.51:5000';
 
   constructor(private http: HttpClient) { }
 

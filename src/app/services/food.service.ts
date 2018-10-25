@@ -9,7 +9,7 @@ import { UserService } from './user.service';
 
 export class FoodService {
 
-  url = 'http://localhost:5000';
+  url = 'http://192.168.1.51:5000';
 
   constructor(
     private http: HttpClient,
