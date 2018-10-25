@@ -13,10 +13,7 @@ export class MainMenuComponent implements OnInit {
     private router: Router,
     private userService: UserService
   ) {
-    this.userService.getUserSession();
-    // var instance = M.Carousel.init({
-    //   fullWidth: true
-    // });
+    this.userService.showNotification('Comida', '5:00pm');
   }
 
   ngOnInit() {

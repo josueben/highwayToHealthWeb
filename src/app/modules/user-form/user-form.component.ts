@@ -25,7 +25,9 @@ export class UserFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private userService: UserService,
     private router: Router
-    ) { }
+    ) {
+      
+    }
 
   ngOnInit() {
     this.createUserForm = this.formBuilder.group({
@@ -35,9 +37,9 @@ export class UserFormComponent implements OnInit {
       name: ['', Validators.required],
       lastname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      age: ['', [Validators.required, Validators.pattern('[0-9]+')]],
-      weight: ['', [Validators.required, Validators.minLength(2)]],
-      height: ['', [Validators.required, Validators.minLength(2)]],
+      age: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(2), Validators.pattern('[0-9]+')]],
+      weight: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(3)]],
+      height: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(3)]],
       sex: ['', Validators.required],
       activity: ['', Validators.required]
     });

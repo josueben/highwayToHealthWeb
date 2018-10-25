@@ -71,6 +71,23 @@ export class UserService {
     }
   }
 
+  showNotification(meal: string, hour: string) {
+    const check = Notification.permission;
+    console.log(check);
+    if (Notification) {
+      if (check !== 'granted') {
+        Notification.requestPermission();
+      }
+      const title = meal;
+      const extra = {
+        icon: '../favicon.ico',
+        body: 'Recuerda que tu horario de comida es a las: ' + hour
+      };
+      const noti = new Notification( title, extra);
+      setTimeout( function() { noti.close(); }, 10000);
+    }
+  }
+
   destroySessionStorage() {
     sessionStorage.clear();
     this.logged = false;

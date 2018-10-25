@@ -20,6 +20,7 @@ import { SidenavComponent } from './modules/sidenav/sidenav.component';
 import { RecordOfMeasuresComponent } from './modules/record-of-measures/record-of-measures.component';
 import { NutritionalInformationComponent } from './modules/nutritional-information/nutritional-information.component';
 import { ChartsModule } from 'ng2-charts';
+import { DistributionComponent } from './modules/distribution/distribution.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ChartsModule } from 'ng2-charts';
     DietComponent,
     SidenavComponent,
     RecordOfMeasuresComponent,
-    NutritionalInformationComponent
+    NutritionalInformationComponent,
+    DistributionComponent
   ],
   imports: [
     BrowserModule,

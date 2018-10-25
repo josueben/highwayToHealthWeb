@@ -32,7 +32,7 @@ export class LogInComponent implements OnInit {
     private userService: UserService,
     private router: Router
   ) {
-      this.userService.destroySessionStorage();
+    this.userService.destroySessionStorage();
   }
 
   ngOnInit() {
