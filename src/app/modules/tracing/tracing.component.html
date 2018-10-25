@@ -1,42 +1,53 @@
 <script src="node_modules/chart.js/src/chart.js"></script>
 
+<div class="row container">
+  <div class="col s12 m12 l12 center-align">
+    <span class="title">
+      Seguimiento
+    </span>
+  </div>
 
-<div class="container">
-  <span class="title">
-    Seguimiento
-  </span>
-
+<div class="center-align">
   <form [formGroup]="setData">
-    <mz-datepicker-container class="col s12 m6 l6">
+    <mz-datepicker-container>
       <input mz-datepicker
-        [label]="'Selecciona una fecha'"
         [options]="options"
         id="datepicker"
-        placeholder="Elige la fecha para el reporte "
+        placeholder="Fecha de reporte"
         formControlName="date"
         type="text">
     </mz-datepicker-container>
   </form>
+</div>
 
   <div class="col s12 m6 l12 center-align aprro">
-    <a (click)="search()" class="m-buttons" class="waves-effect waves-light btn">Buscar</a>
+    <a (click)="search(); Chart.openModal();" class="m-buttons" class="waves-effect waves-light btn">Buscar</a>
   </div>
 
-  <div *ngIf="this.loaded" class="row">
-    <div class="col-md-6">
-      <div style="display: block;">
-      <canvas baseChart width="400" height="400"
-                  [datasets]="lineChartData"
-                  [labels]="lineChartLabels"
-                  [options]="lineChartOptions"
-                  [colors]="lineChartColors"
-                  [legend]="lineChartLegend"
-                  [chartType]="lineChartType"
-                  (chartHover)="chartHovered($event)"
-                  (chartClick)="chartClicked($event)"></canvas>
+  <!-- Modal !-->
+  <mz-modal #Chart [fixedFooter]="true" [options]="modalOptions">
+    <mz-modal-header>
+      <div class="title-hdiw info">Tu Seguimiento</div>
+    </mz-modal-header>
+    <mz-modal-content>
+      <div class="col s12 m12 l12 center-align" *ngIf="this.loaded">
+          <canvas baseChart width="400" height="400"
+                      [datasets]="lineChartData"
+                      [labels]="lineChartLabels"
+                      [options]="lineChartOptions"
+                      [colors]="lineChartColors"
+                      [legend]="lineChartLegend"
+                      [chartType]="lineChartType"
+                      (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)">
+          </canvas>
       </div>
-    </div>
-  </div>
+    </mz-modal-content>
+    <mz-modal-footer>
+      <button mz-button [flat]="true" mz-modal-close>Simón</button>
+    </mz-modal-footer>
+  </mz-modal>
+  <!-- /Modal !-->
 
   <div class="wrap z-depth-5">
     <table class="striped highlight centered">

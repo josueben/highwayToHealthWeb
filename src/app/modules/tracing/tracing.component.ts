@@ -39,8 +39,8 @@ export class TracingComponent implements OnInit {
   };
   public lineChartColors = [
     { // fala escala de verdes
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
+      backgroundColor: 'rgba(179, 255, 179, 0.4)',
+      borderColor: 'rgba(51, 255, 51, .8)',
       pointBackgroundColor: 'rgba(148,159,177,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
