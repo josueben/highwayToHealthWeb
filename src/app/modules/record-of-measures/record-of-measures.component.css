@@ -38,7 +38,7 @@ a:hover {
 
 .container-dnny {
   width: 100%;
-  min-height: 100vh;
+  min-height: 85vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -102,4 +102,5 @@ a:hover {
 
 .m-buttons {
   text-align: center;
+  margin-bottom: -2%;
 }

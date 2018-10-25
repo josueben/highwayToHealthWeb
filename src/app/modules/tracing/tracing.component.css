@@ -36,3 +36,20 @@
 table.highlight tbody tr:hover {
     background-color: #ccffcc !important;
 }
+
+.title-hdiw {
+  font-weight: bold;
+  font-size: 30px;
+  color: #26a69a;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.info {
+  padding-bottom: 10px;
+}
+
+.aprro {
+  margin-bottom: -2%;
+}
