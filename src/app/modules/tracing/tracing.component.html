@@ -30,7 +30,7 @@
       <div class="title-hdiw info">Tu Seguimiento</div>
     </mz-modal-header>
     <mz-modal-content>
-      <div class="col s12 m8 l8" *ngIf="this.loaded" style="transform: translateX(25%) !important;">
+      <div class="col s12 m12 l12 center-align" *ngIf="this.loaded">
           <canvas baseChart width="400" height="400"
                       [datasets]="lineChartData"
                       [labels]="lineChartLabels"
