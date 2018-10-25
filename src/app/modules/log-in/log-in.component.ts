@@ -74,7 +74,6 @@ export class LogInComponent implements OnInit {
           this.router.navigate(['/main-menu']);
           this.userService.logged = true;
           this.mealService.getUserMealsLogIn(user.id).subscribe((responseMeal: MealPreference[]) => {
-            console.log(responseMeal);
             if (responseMeal.length > 0) {
               this.setMealPreference = responseMeal;
               sessionStorage.setItem('meals', JSON.stringify(this.setMealPreference));

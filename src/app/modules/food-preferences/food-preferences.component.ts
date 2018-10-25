@@ -59,7 +59,6 @@ export class FoodPreferencesComponent implements OnInit {
     // lo cargamos aquí para que se vean desde el comienzo, el ws nos los da y lo agrupamos
     this.foodService.getAllFoods().subscribe((response: FoodPreferenceAnswer[]) => {
       this.foods = response;
-      console.log(response);
       const groupDivider = this.foods.length / 3;
       for ( const itemFood of this.foods ) {
         switch (itemFood.kind) {
@@ -171,7 +170,6 @@ export class FoodPreferencesComponent implements OnInit {
     } else {
       quantity = 0;
     }
-    console.log(this.selectedFoods);
     this.foodService.setUserFoods(this.selectedFoods, quantity).subscribe((response: Answer) => {
       if (response.status === 'OK') {
         this.router.navigate(['/main-menu']);

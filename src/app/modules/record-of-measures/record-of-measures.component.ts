@@ -61,7 +61,6 @@ export class RecordOfMeasuresComponent implements OnInit {
         sex: this.userService.actualUser.sex
       };
       this.userService.updateUser(user).subscribe((response: Answer) => {
-      console.log(response);
       if (response.status === 'OK') {
         this.router.navigate(['/main-menu']);
         }

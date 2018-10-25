@@ -26,7 +26,6 @@ export class UserFormComponent implements OnInit {
     private userService: UserService,
     private router: Router
     ) {
-      
     }
 
   ngOnInit() {
@@ -71,9 +70,7 @@ export class UserFormComponent implements OnInit {
           sex: this.f.sex.value
         };
         this.userService.createUser(user).subscribe((response: Answer) => {
-          console.log(response);
           if (response.status === 'OK') {
-            console.log('Chiii');
             this.router.navigate(['/log-in']);
           }
         });

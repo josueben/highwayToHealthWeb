@@ -16,7 +16,23 @@ export class DietService {
     const method = this.url + '/SetDietToUser';
     const body = JSON.stringify(dietData);
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Change_Type': '0',
+      'Kind': '0',
+      'Change': '0',
+    });
+    const options = { headers: headers };
+    return this.http.post(method, body, options);
+  }
+
+  changeDietToUser (dietData: DietPost, incomodity: number, kindFood: number) {
+    const method = this.url + '/SetDietToUser';
+    const body = JSON.stringify(dietData);
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Change_Type': incomodity.toString(),
+      'Kind': kindFood.toString(),
+      'Change': '1',
     });
     const options = { headers: headers };
     return this.http.post(method, body, options);

@@ -15,6 +15,7 @@ export class MainMenuComponent implements OnInit {
   ) {
     // this.userService.showNotification('Comida', '5:00pm');
     this.userService.checkHour();
+    this.userService.getUserSession();
   }
 
   ngOnInit() {

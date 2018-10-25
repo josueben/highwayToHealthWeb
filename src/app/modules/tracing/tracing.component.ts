@@ -54,11 +54,9 @@ export class TracingComponent implements OnInit {
 
   // events
   public chartClicked(e: any): void {
-    console.log(e);
   }
 
   public chartHovered(e: any): void {
-    console.log(e);
   }
 
   // ==================== /Chart ====================
@@ -75,13 +73,10 @@ export class TracingComponent implements OnInit {
         this.weights.push(item.weight);
         this.dates.push(item.date);
       }
-      console.log(this.weights);
       this.lineChartData = [
         {data: this.weights, label: 'Peso'}
       ];
       this.lineChartLabels = this.dates;
-      console.log(response);
-      console.log(this.tracings);
       this.loaded = true;
     });
   }

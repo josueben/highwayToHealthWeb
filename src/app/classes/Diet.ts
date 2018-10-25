@@ -40,4 +40,7 @@ export class DietAnswer {
     AzucaresConGrasa: number;
     AlimentosLibresDeEnergia: number;
     Calorias: number;
+    Proteinas: number;
+    Lipidos: number;
+    HCO: number;
 }
