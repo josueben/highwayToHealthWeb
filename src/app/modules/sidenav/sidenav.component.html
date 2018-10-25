@@ -1,4 +1,4 @@
-<mz-sidenav [backgroundClass]="'side-nav'" [id]="'sidenav-demo'" [collapseButtonId]="'btn-sidenav-demo'">
+<mz-sidenav [backgroundClass]="'side-nav'" [id]="'sidenav-demo'" [collapseButtonId]="'btn-sidenav-demo'" *ngIf="this.userService.actualUser">
 
   <mz-sidenav-header (click)="goToHome()" class="cursorPointer center">
     Highway to Health
@@ -64,7 +64,7 @@
 </button>
 
 <!-- Modals !-->
-<mz-modal #profile [fixedFooter]="true" [options]="modalOptions">
+<mz-modal *ngIf="this.userService.actualUser" #profile [fixedFooter]="true" [options]="modalOptions">
   <mz-modal-header>
     <div class="title-hdiw info">{{this.userService.actualUser.name}} {{this.userService.actualUser.lastname}}</div>
   </mz-modal-header>

@@ -13,7 +13,8 @@ export class MainMenuComponent implements OnInit {
     private router: Router,
     private userService: UserService
   ) {
-    this.userService.showNotification('Comida', '5:00pm');
+    // this.userService.showNotification('Comida', '5:00pm');
+    this.userService.checkHour();
   }
 
   ngOnInit() {

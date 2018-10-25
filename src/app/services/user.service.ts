@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User, UserResponse } from '../classes/User';
+import { MealPreference } from '../classes/MealPreference';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -11,6 +12,7 @@ export class UserService {
 
   url = 'http://localhost:5000';
   actualUser: UserResponse;
+  actualMeals: MealPreference[] = [];
   public logged = false;
 
   constructor(
@@ -56,35 +58,47 @@ export class UserService {
   }
 
   getUserSession() {
-    console.log('Holi');
     if (sessionStorage.getItem('user') === null) {
       this.logged = true;
       this.destroySessionStorage();
     } else {
       this.actualUser = JSON.parse(sessionStorage.user);
-      console.log(this.actualUser);
       if (this.actualUser.id === null) {
         this.destroySessionStorage();
       } else {
+        this.getMealSession();
         this.logged = true;
       }
     }
   }
 
+  getMealSession() {
+    if (sessionStorage.getItem('meals') !== null) {
+      this.actualMeals = JSON.parse(sessionStorage.getItem('meals'));
+      console.log(this.actualMeals);
+    }
+  }
+
+  checkHour() {
+    const actualHour = new Date();
+    const compareHour = (actualHour.getHours() * 100) + actualHour.getMinutes();
+    console.log(compareHour);
+  }
+
   showNotification(meal: string, hour: string) {
-    const check = Notification.permission;
-    console.log(check);
+    const p: string = Notification['permission'];
     if (Notification) {
-      if (check !== 'granted') {
+      if (p !== 'granted') {
         Notification.requestPermission();
+      } else {
+        const title = meal;
+        const extra = {
+          icon: '../favicon.ico',
+          body: 'Recuerda que tu horario de comida es a las: ' + hour
+        };
+        const noti = new Notification( title, extra);
+        setTimeout( function() { noti.close(); }, 10000);
       }
-      const title = meal;
-      const extra = {
-        icon: '../favicon.ico',
-        body: 'Recuerda que tu horario de comida es a las: ' + hour
-      };
-      const noti = new Notification( title, extra);
-      setTimeout( function() { noti.close(); }, 10000);
     }
   }
 

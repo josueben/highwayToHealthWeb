@@ -64,6 +64,7 @@ export class MealPreferenceComponent implements OnInit {
       this.mealService.setMeal(this.mealPreferences).subscribe((response: Answer) => {
         if (response.status === 'OK') {
           this.router.navigate(['/main-menu']);
+          sessionStorage.setItem('meals', JSON.stringify(this.mealPreferences));
         }
       });
     }

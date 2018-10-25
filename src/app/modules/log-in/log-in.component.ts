@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../../services/login.service';
 import { UserService } from '../../services/user.service';
+import { MealsService } from '../../services/meals.service';
 import { Router } from '@angular/router';
 import { User, UserResponse } from '../../classes/User';
+import { MealPreference } from 'src/app/classes/MealPreference';
 
 interface Config {
   codigo_postal: string;
@@ -23,6 +25,7 @@ export class LogInComponent implements OnInit {
   logInForm: FormGroup;
   submitted = false;
   noExist = false;
+  setMealPreference: MealPreference[] = [];
 
   config: Config;
 
@@ -30,6 +33,7 @@ export class LogInComponent implements OnInit {
     private formBuilder: FormBuilder,
     private loginService: LoginService,
     private userService: UserService,
+    private mealService: MealsService,
     private router: Router
   ) {
     this.userService.destroySessionStorage();
@@ -69,7 +73,16 @@ export class LogInComponent implements OnInit {
           sessionStorage.setItem('user', JSON.stringify(user));
           this.router.navigate(['/main-menu']);
           this.userService.logged = true;
-          this.userService.getUserSession();
+          this.mealService.getUserMealsLogIn(user.id).subscribe((responseMeal: MealPreference[]) => {
+            console.log(responseMeal);
+            if (responseMeal.length > 0) {
+              this.setMealPreference = responseMeal;
+              sessionStorage.setItem('meals', JSON.stringify(this.setMealPreference));
+              this.userService.getUserSession();
+            } else {
+              this.userService.getUserSession();
+            }
+          });
         }, error => {
           this.noExist = true;
         }

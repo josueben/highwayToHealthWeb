@@ -38,4 +38,15 @@ export class MealsService {
     const options = { headers: headers };
     return this.http.get(method, options);
   }
+
+  getUserMealsLogIn(userId: number) {
+    const method = this.url + '/GetUserMeals';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'ICKKCK',
+      'id_user': userId.toString()
+    });
+    const options = { headers: headers };
+    return this.http.get(method, options);
+  }
 }
