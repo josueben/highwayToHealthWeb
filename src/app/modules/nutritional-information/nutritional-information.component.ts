@@ -23,16 +23,12 @@ export class NutritionalInformationComponent implements OnInit {
     this.userService.checkHour();
     this.foodService.getAllFoods().subscribe((response: Food[]) => {
       this.AllFoods = response;
-      console.log(this.AllFoods);
       this.foodService.getUserFoods().subscribe((responseUserFoods: FoodPreferenceAnswer[]) => {
         this.UserFoodsAnwer = responseUserFoods;
-        console.log(this.UserFoodsAnwer);
         let foundedFood = 0;
-        console.log(this.UserFoodsAnwer.length);
           for (let item = 0; item < this.AllFoods.length; item++) {
             for (let itemUser = 0; itemUser < this.UserFoodsAnwer.length; itemUser++) {
               if (this.AllFoods[item].id === this.UserFoodsAnwer[itemUser].id) {
-                console.log('Holi');
                 let kindString;
                 switch (this.AllFoods[item].kind) {
                   case 1: {

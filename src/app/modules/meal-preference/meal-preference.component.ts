@@ -37,7 +37,6 @@ export class MealPreferenceComponent implements OnInit {
     this.userService.getUserSession();
     this.userService.checkHour();
     this.mealService.getUserMeals().subscribe((response: MealPreference[]) => {
-      console.log(response);
       if (response.length > 0) {
         this.setMealPreference = this.formBuilder.group({
           breakfast: [response[0].hour, Validators.required],
