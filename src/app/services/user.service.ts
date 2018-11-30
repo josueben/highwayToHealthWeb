@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User, UserResponse } from '../classes/User';
+import { DietAnswer } from '../classes/Diet';
 import { MealPreference, NotificationMeals } from '../classes/MealPreference';
 import { Router } from '@angular/router';
 
@@ -22,6 +23,7 @@ export class UserService {
     this.notificationDefault];
 
   public logged = false;
+  dietGenerated: DietAnswer = new DietAnswer();
 
   constructor(
     private http: HttpClient,
@@ -77,6 +79,7 @@ export class UserService {
       } else {
         this.getMealSession();
         this.getNotifications();
+        this.getUserDiet();
         this.logged = true;
       }
     }
@@ -85,14 +88,18 @@ export class UserService {
   getMealSession() {
     if (sessionStorage.getItem('meals') !== null) {
       this.actualMeals = JSON.parse(sessionStorage.getItem('meals'));
-      console.log(this.actualMeals);
     }
   }
 
   getNotifications() {
     if (sessionStorage.getItem('notifications') !== null) {
       this.notifications = JSON.parse(sessionStorage.getItem('notifications'));
-      console.log(this.notifications);
+    }
+  }
+
+  getUserDiet() {
+    if (sessionStorage.getItem('diet') !== null) {
+      this.dietGenerated = JSON.parse(sessionStorage.getItem('diet'));
     }
   }
 

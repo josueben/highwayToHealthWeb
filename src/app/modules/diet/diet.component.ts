@@ -19,6 +19,7 @@ export class DietComponent implements OnInit {
   submittedChange = false;
   dietForm;
   dietChange;
+  previousDiet = false;
   dietGeneratedData: DietAnswer = new DietAnswer();
 
   constructor(
@@ -32,7 +33,6 @@ export class DietComponent implements OnInit {
     this.dietForm = this.formBuilder.group({
       purpose: ['', Validators.required]
     });
-
     this.dietChange = this.formBuilder.group({
       incomodity: ['', Validators.required],
       kind: ['', Validators.required]
@@ -61,10 +61,21 @@ export class DietComponent implements OnInit {
     };
     // Aqui lee la respuesta y carga la informacion en el arreglo para que
     // se muestre en la pagina web
-    this.dietService.setDietToUser(dietToPost).subscribe((response: DietAnswer) => {
-      console.log(response);
-      this.dietGeneratedData = response;
-    });
+    console.log(this.userService.dietGenerated);
+    if(this.userService.dietGenerated.AceitesGrasasCP >= 0){
+      this.dietGeneratedData = this.userService.dietGenerated;
+      this.previousDiet = true;
+      console.log('Entre');
+    }else{
+      this.dietService.setDietToUser(dietToPost).subscribe((response: DietAnswer) => {
+        this.dietGeneratedData = response;
+      });
+    }    
+  }
+
+  saveDiet(){
+    sessionStorage.setItem('diet', JSON.stringify(this.dietGeneratedData));
+    this.router.navigate(['/main-menu']);
   }
 
   changeDiet() {

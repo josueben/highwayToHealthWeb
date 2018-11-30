@@ -7,34 +7,34 @@
   <mz-sidenav-divider></mz-sidenav-divider>
 
   <div class="profile" (click)="profile.openModal()">
-    <mz-sidenav-subheader><i class="material-icons">account_circle</i>{{this.userService.actualUser.name}} {{this.userService.actualUser.lastname}}</mz-sidenav-subheader>
+    <mz-sidenav-subheader><i mz-icon-mdi [icon]="'emoticon-cool'"></i>{{this.userService.actualUser.name}} {{this.userService.actualUser.lastname}}</mz-sidenav-subheader>
     <mz-sidenav-subheader>{{this.userService.actualUser.email}}</mz-sidenav-subheader>
   </div>
 
   <mz-sidenav-divider></mz-sidenav-divider>
 
   <mz-sidenav-link>
-    <a routerLink="/diet" class="waves-effect waves-teal"><i class="material-icons">equalizer</i>Generar dieta</a>
+    <a routerLink="/diet" class="waves-effect waves-teal"><i mz-icon-mdi [icon]="'basket-fill'"></i>Generar dieta</a>
   </mz-sidenav-link>
 
   <mz-sidenav-link>
-    <a routerLink="/measures" class="waves-effect waves-teal"><i class="material-icons">edit</i>Actualizar medidas</a>
+    <a routerLink="/measures" class="waves-effect waves-teal"><i mz-icon-mdi [icon]="'marker'"></i>Actualizar medidas</a>
   </mz-sidenav-link>
 
   <mz-sidenav-link>
-    <a routerLink="/tracing" class="waves-effect waves-teal"><i class="material-icons">assessment</i>Seguimiento</a>
+    <a routerLink="/tracing" class="waves-effect waves-teal"><i mz-icon-mdi [icon]="'chart-histogram'"></i>Seguimiento</a>
   </mz-sidenav-link>
 
   <mz-sidenav-link>
-    <a routerLink="/meal-preferences" class="waves-effect waves-teal"><i class="material-icons">alarm_add</i>Elige horas de comidas</a>
+    <a routerLink="/meal-preferences" class="waves-effect waves-teal"><i mz-icon-mdi [icon]="'camera-timer'"></i>Elige horas de comidas</a>
   </mz-sidenav-link>
 
   <mz-sidenav-link>
-    <a routerLink="/food-preferences" class="waves-effect waves-teal"><i class="material-icons">star</i>Elige los alimentos</a>
+    <a routerLink="/food-preferences" class="waves-effect waves-teal"><i mz-icon-mdi [icon]="'heart'"></i>Elige los alimentos</a>
   </mz-sidenav-link>
 
   <mz-sidenav-link>
-    <a routerLink="/nutritional-info" class="waves-effect waves-teal"><i class="material-icons">restaurant_menu</i>Información nutricional</a>
+    <a routerLink="/nutritional-info" class="waves-effect waves-teal"><i mz-icon-mdi [icon]="'pizza'"></i>Información nutricional</a>
   </mz-sidenav-link>
 
   <mz-sidenav-subheader>Redes Sociales</mz-sidenav-subheader>
@@ -50,16 +50,16 @@
   <mz-sidenav-divider></mz-sidenav-divider>
 
   <mz-sidenav-link>
-    <a routerLink="/" class="waves-effect waves-teal"><i class="material-icons">mail</i>Contactanos</a>
+    <a routerLink="/" class="waves-effect waves-teal"><i mz-icon-mdi [icon]="'gmail'"></i>Contactanos</a>
   </mz-sidenav-link>
 
   <mz-sidenav-link>
-    <a (click)="closeSession()" class="waves-effect waves-teal"><i class="material-icons">power_settings_new</i>Cerrar sesión</a>
+    <a (click)="closeSession()" class="waves-effect waves-teal"><i mz-icon-mdi [icon]="'power-standby'"></i>Cerrar sesión</a>
   </mz-sidenav-link>
 
 </mz-sidenav>
 
-<button mz-button id="btn-sidenav-demo"><i class="material-icons right">menu</i>
+<button mz-button id="btn-sidenav-demo"><i mz-icon-mdi [icon]="'view-headline'" [align]="'right'"></i>
   Menu
 </button>
 

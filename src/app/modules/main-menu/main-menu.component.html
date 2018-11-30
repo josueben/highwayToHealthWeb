@@ -16,7 +16,7 @@
         </mz-card-image-title>
         <mz-card-content>
           Elige alimentos de tu preferencia.
-          <i mz-icon (click)="Food.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
+          <i mz-icon-mdi (click)="Meals.openModal()" [align]="'right'" [icon]="'information'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
@@ -31,7 +31,7 @@
         </mz-card-image-title>
         <mz-card-content>
           Personaliza tús horarios de comida.
-          <i mz-icon (click)="Meals.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
+          <i mz-icon-mdi (click)="Meals.openModal()" [align]="'right'" [icon]="'information'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
@@ -46,7 +46,7 @@
         </mz-card-image-title>
         <mz-card-content>
           Consulta el seguimiento de tu dieta.
-          <i mz-icon (click)="Tracing.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
+          <i mz-icon-mdi (click)="Meals.openModal()" [align]="'right'" [icon]="'information'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
@@ -61,7 +61,7 @@
         </mz-card-image-title>
         <mz-card-content>
           Una dieta hecha a tu medida cada día.
-          <i mz-icon (click)="Diet.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
+          <i mz-icon-mdi (click)="Meals.openModal()" [align]="'right'" [icon]="'information'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
@@ -76,7 +76,7 @@
         </mz-card-image-title>
         <mz-card-content>
           Los valores nutrimentales de tus alimentos.
-          <i mz-icon (click)="NutriInf.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
+          <i mz-icon-mdi (click)="Meals.openModal()" [align]="'right'" [icon]="'information'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
@@ -91,7 +91,7 @@
         </mz-card-image-title>
         <mz-card-content>
           Gestiona las medidas de tus alimentos.
-          <i mz-icon (click)="Record.openModal()" [align]="'right'" [icon]="'info'" [size]="'small'"></i>
+          <i mz-icon-mdi (click)="Meals.openModal()" [align]="'right'" [icon]="'information'" [size]="'small'"></i>
         </mz-card-content>
       </mz-card>
     </div>
@@ -102,10 +102,10 @@
         <div class="title-hdiw info">Personaliza tus comidas</div>
       </mz-modal-header>
       <mz-modal-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Aquí puedes elegir los alimentos de tu preferencia, selecciona el grupo de alimento y elige los que más te gusten. Las dietas seran arrojadas con base a los alimentos seleccionados.
       </mz-modal-content>
       <mz-modal-footer>
-        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+        <button mz-button [flat]="true" mz-modal-close>Ok</button>
       </mz-modal-footer>
     </mz-modal>
     <!-- /Modal !-->
@@ -115,10 +115,10 @@
         <div class="title-hdiw info">Elige la hora de comidas</div>
       </mz-modal-header>
       <mz-modal-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Elige la hora para las diferentes comidas, las colaciones pueden ser opcionales. Dependiendo la hora en la que se registre la comida obtendras una notificación.
       </mz-modal-content>
       <mz-modal-footer>
-        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+        <button mz-button [flat]="true" mz-modal-close>Ok</button>
       </mz-modal-footer>
     </mz-modal>
     <!-- /Modal !-->
@@ -128,10 +128,10 @@
         <div class="title-hdiw info">Seguimiento</div>
       </mz-modal-header>
       <mz-modal-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Aquí podras ver las estadisticas por fecha de tu progreso, recuerda estar actualizando tu peso constantemente.
       </mz-modal-content>
       <mz-modal-footer>
-        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+        <button mz-button [flat]="true" mz-modal-close>Ok</button>
       </mz-modal-footer>
     </mz-modal>
     <!-- /Modal !-->
@@ -141,10 +141,10 @@
         <div class="title-hdiw info">Generar dieta</div>
       </mz-modal-header>
       <mz-modal-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        En este apartado podrás seleccionar el propósito de tu dieta, esta te arrojara la cantidad de alimentos por grupo para consumir durante el día.
       </mz-modal-content>
       <mz-modal-footer>
-        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+        <button mz-button [flat]="true" mz-modal-close>Ok</button>
       </mz-modal-footer>
     </mz-modal>
     <!-- /Modal !-->
@@ -154,10 +154,10 @@
         <div class="title-hdiw info">Información nutrimental</div>
       </mz-modal-header>
       <mz-modal-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Aquí podrás consultar la información nutricional de tus alimentos favoritos.
       </mz-modal-content>
       <mz-modal-footer>
-        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+        <button mz-button [flat]="true" mz-modal-close>Ok</button>
       </mz-modal-footer>
     </mz-modal>
     <!-- /Modal !-->
@@ -167,10 +167,10 @@
         <div class="title-hdiw info">Actualiza medidas</div>
       </mz-modal-header>
       <mz-modal-content>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Aquí podrás actualizar tu progreso, recuerda medirte y pesarte constantemente. Te recomendamos acudir a un especialista para mejores resultados.
       </mz-modal-content>
       <mz-modal-footer>
-        <button mz-button [flat]="true" mz-modal-close>Simón</button>
+        <button mz-button [flat]="true" mz-modal-close>Ok</button>
       </mz-modal-footer>
     </mz-modal>
     <!-- /Modal !-->

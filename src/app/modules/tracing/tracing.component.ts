@@ -61,6 +61,9 @@ export class TracingComponent implements OnInit {
   // ==================== /Chart ====================
 
   search() {
+    this.tracings = [];
+    this.weights = [];
+    this.dates = [];
     console.log(this.f.date.value);
     const date: string = this.f.date.value;
     this.userService.getTracingOfUser(date).subscribe((response: Tracing[]) => {
